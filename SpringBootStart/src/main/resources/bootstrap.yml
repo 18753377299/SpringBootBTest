@@ -26,7 +26,7 @@ spring:
     view:
       prefix: /WEB-INF/jsp/
       suffix: .jsp
-#     文件上传
+#文件上传
   http: 
     multipart:
 #      设置单个上传文件的大小
@@ -50,6 +50,8 @@ spring:
     password: 1234
     
 mybatis: 
+  #指定POJO扫描包来让mybatis自动扫描到自定义POJO
+  type-aliases-package: com.*.po
   mapperLocations: classpath*:mapper/**/*Dao.xml
   executor-type: REUSE 
 #  日志平台输出（方便查看输出sql语句）

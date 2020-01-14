@@ -17,12 +17,12 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
   <dependencies>
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>3.8.1</version>
-      <scope>test</scope>
-    </dependency>
+	    <dependency>
+	      <groupId>junit</groupId>
+	      <artifactId>junit</artifactId>
+	<!--       <version>3.8.1</version> -->
+	      <scope>test</scope>
+	    </dependency>
      <!-- springBoot的启动器 -->
   		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -91,6 +91,7 @@
 			<groupId>net.sf.ehcache</groupId>
 		    <artifactId>ehcache</artifactId>
 		</dependency>
+		
 		<!-- Spring Data Redis 的启动器 -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -106,6 +107,16 @@
 			<groupId>org.quartz-scheduler</groupId>
 			<artifactId>quartz</artifactId>
 			<version>2.2.1</version>
+		</dependency>
+		<!-- freemarker 启动器的坐标 -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-freemarker</artifactId>
+		</dependency>
+		<!-- thymeleaf 启动器的坐标 -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-thymeleaf</artifactId>
 		</dependency>
 		
 		<!-- 修改后立即生效，热部署 -->

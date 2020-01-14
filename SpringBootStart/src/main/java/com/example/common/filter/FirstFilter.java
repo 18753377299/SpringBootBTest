@@ -9,8 +9,10 @@ import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 import javax.servlet.annotation.WebFilter;
+import javax.servlet.http.HttpServletRequest;
 
 // 通过注解进行filter组件的注册
+
 @WebFilter(filterName="FirstFilter",urlPatterns="/*")
 public class FirstFilter implements Filter{
 
@@ -24,7 +26,9 @@ public class FirstFilter implements Filter{
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
 			throws IOException, ServletException {
 		// TODO Auto-generated method stub
-		System.out.println("==========FirstFilter============");
+		HttpServletRequest req=(HttpServletRequest)request;
+		String uri = req.getRequestURI();
+		System.out.println("==========FirstFilter============"+uri);
 		chain.doFilter(request, response);
 	}
 

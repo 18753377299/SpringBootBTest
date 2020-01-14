@@ -47,10 +47,9 @@ public class UserController {
 //		userService.addUser(user);	
 //		userService.selectByAll();
 		
-		System.out.println(userService.selectById());
+//		System.out.println(userService.selectById());
 		
-		Users user =new Users(12,"zhangsan");
-		userService.addUser(user);
+		userService.addUser();
 		System.out.println("====================after");
 		System.out.println(userService.selectById());
 		
@@ -71,27 +70,28 @@ public class UserController {
 	* java.lang.ArithmeticException 
 	* 该方法需要返回一个 ModelAndView：目的是可以让我们封装异常信息以及视图的指定
 	* 参数 Exception e:会将产生异常对象注入到方法中
+	* 默认跳转到的页面是/SpringBootStart/src/main/resources/templates下的文件，
+	* 因为使用了thymeleaf 
 	*/
 //	@ExceptionHandler(value= {ArithmeticException.class})
-//	public String arithmeticException(Exception e) {
+//	public ModelAndView arithmeticException(Exception e) {
 //		ModelAndView modelAndView = new ModelAndView();
 //		modelAndView.addObject("error",e.toString());
 //		modelAndView.setViewName("error1");
-//		return e.toString();
+//		return modelAndView;
 //	}
 	
 	/**
 	* java.lang.NullPointerException
-	* 该方法需要返回一个 ModelAndView：目的是可以让我们封装异常信息以及视
-	图的指定
-	* 参数 Exception e:会将产生异常对象注入到方法中
+	* 该方法需要返回一个 ModelAndView：目的是可以让我们封装异常信息以及视图的指定
+	* 参数 Exception e:会将产生异常对象注入到方法中，转到的页面必须是h5格式
 	*/
 //	@ExceptionHandler(value={java.lang.NullPointerException.class})
 //	public ModelAndView nullPointerExceptionHandler(Exception e){
-//	ModelAndView mv = new ModelAndView();
-//	mv.addObject("error", e.toString());
-//	mv.setViewName("error2");
-//	return mv;
+	//	ModelAndView mv = new ModelAndView();
+	//	mv.addObject("error", e.toString());
+	//	mv.setViewName("error2");
+	//	return mv;
 //	}
 	
 }

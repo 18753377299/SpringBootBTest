@@ -16,7 +16,7 @@ import org.springframework.web.multipart.MultipartFile;
 public class FileUploadController {
 	
 	/**
-	 * 处理文件上传
+	 * 处理文件上传： 进行文件上上传的时候可以在配置文件中设置单个文件上传的大小和一次请求上传文件的总容量
 	 * @throws IOException 
 	 * @throws IllegalStateException 
 	 * */

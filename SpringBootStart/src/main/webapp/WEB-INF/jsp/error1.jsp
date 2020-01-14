@@ -8,5 +8,6 @@
 </head>
 <body>
    error
+   <span>${error}</span>
 </body>
 </html>
