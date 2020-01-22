@@ -112,5 +112,6 @@
   <modules>
   	 <module>SpringBootStart</module>
     <module>SpringBootJPA</module>
+    <module>SpringBootQuartz</module>
   </modules>
 </project>

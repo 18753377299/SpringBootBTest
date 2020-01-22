@@ -30,7 +30,6 @@ public class FileUploadController {
 		Map<String , Object> map = new HashMap<String, Object>();
 		map.put("msg", "ok");
 		return map;
-		
 	}
 	
 	
