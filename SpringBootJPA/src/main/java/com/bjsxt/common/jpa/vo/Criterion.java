@@ -8,7 +8,7 @@ import javax.persistence.criteria.Root;
 public interface Criterion {  
     
     public enum Operator {  
-        EQ, NE, LIKE, GT, LT, GTE, LTE, AND, OR 
+        EQ, NE, LIKE, GT, LT, GTE, LTE, AND, OR ,IS_MEMBER,IS_NOT_MEMBER, INTERCEPT, NINTERCEPT,ISNOTNULL,ISNULL
 //        ,equal,notEqual,like,greaterThan,lessThan,greaterThanOrEqualTo,lessThanOrEqualTo,
     }  
     

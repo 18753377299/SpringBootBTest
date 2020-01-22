@@ -164,6 +164,48 @@ public class Restrictions {
         ses[1]=new SimpleExpression(fieldName,object2, Criterion.Operator.LTE);
         return new LogicalExpression(ses, Criterion.Operator.AND);
     }
+    /**
+     * 集合包含某个元素
+     */
+    public static SimpleExpression hasMember(String fieldName, Object value, boolean ignoreNull) {
+        if (ignoreNull && StringUtils.isEmpty(value)) {
+            return null;
+        }
+        return new SimpleExpression(fieldName, value, Criterion.Operator.IS_MEMBER);
+    }
+    /** 进行字段的截取,from: 从那个位置，len： 截取的长度是多少
+     * @param fieldName 
+     * @param value 
+     * @return 
+     */  
+    public static SimpleExpression intercept(String fieldName, Object value,Integer from,Integer len) {  
+        if(StringUtils.isEmpty(value))return null;
+        return new SimpleExpression (fieldName, value, Criterion.Operator.INTERCEPT,from,len);
+    }  
+    /** 进行字段的截取,不等于的时候,from: 从那个位置，len： 截取的长度是多少
+     * @param fieldName 
+     * @param value 
+     * @return 
+     */  
+    public static SimpleExpression nintercept(String fieldName, Object value,Integer from,Integer len) {  
+        if(StringUtils.isEmpty(value))return null;
+        return new SimpleExpression (fieldName, value, Criterion.Operator.NINTERCEPT,from,len);
+    }
+    /** 字段部位不为null
+     * @param fieldName 
+     * @return 
+     */  
+    public static SimpleExpression isnotnull(String fieldName) {  
+        return new SimpleExpression (fieldName,Criterion.Operator.ISNOTNULL);
+    }
+    /** 字段部位为null
+     * @param fieldName 
+     * @return 
+     */  
+    public static SimpleExpression isnull(String fieldName) {  
+        return new SimpleExpression (fieldName,Criterion.Operator.ISNULL);
+    }
+    
 }
 
 

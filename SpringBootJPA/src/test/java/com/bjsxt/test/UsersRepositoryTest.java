@@ -307,9 +307,16 @@ public class UsersRepositoryTest {
 			public Predicate toPredicate(Root<Users> root, CriteriaQuery<?> query, CriteriaBuilder cb) {
 				// where name = '张三三' and age = 20
 				List<Predicate> list = new ArrayList<>();
-				list.add(cb.equal(root.get("name"),"张三三"));
-				list.add(cb.equal(root.get("age"),20));
+//				list.add(cb.equal(root.get("name"),"张三三"));
+//				list.add(cb.equal(root.get("age"),20));
+				// 进行字段截取查询
+//				list.add(cb.equal(cb.substring(root.get("name"), 1,1),"张"));
+				
+				list.add(cb.isNotNull(root.get("name")));
+				
+				
 				Predicate[] arr = new Predicate[list.size()];
+				
 				return cb.and(list.toArray(arr));
 			}
 		};

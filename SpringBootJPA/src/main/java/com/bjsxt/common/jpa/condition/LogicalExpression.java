@@ -32,7 +32,6 @@ public class LogicalExpression implements Criterion {
             return builder.or(predicates.toArray(new Predicate[predicates.size()])); 
         case AND:
             return builder.and(predicates.toArray(new Predicate[predicates.size()]));
-            
         default: 
             return null;  
         }  
