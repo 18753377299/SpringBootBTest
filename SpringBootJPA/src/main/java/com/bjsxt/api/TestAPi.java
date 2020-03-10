@@ -1,17 +1,23 @@
 package com.bjsxt.api;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
 import com.bjsxt.service.TestService;
+import com.bjsxt.vo.AjaxResult;
+import com.bjsxt.vo.RiskRequestVo;
+
+import io.swagger.annotations.ApiResponse;
 
 @RestController
 @RequestMapping("/test")
-@EnableWebMvc
+//@EnableWebMvc
 public class TestAPi {
 	
 	@Autowired
@@ -46,5 +52,16 @@ public class TestAPi {
      public String update(){
 //		 testService.updateTest();
          return "updateTest";
+     }
+	 //测试
+	 @RequestMapping(value = "/test",method = RequestMethod.POST)
+     public AjaxResult test(@RequestBody RiskRequestVo riskRequestVo,HttpServletRequest request){
+		 AjaxResult ajaxResult =new AjaxResult();
+		 String name = riskRequestVo.getName();
+		 String time= riskRequestVo.getInsertTime().toString();
+		 String contextPath = request.getContextPath();
+//		 testService.updateTest();
+		 ajaxResult.setData("/home/middle/file/abc_ccc.doc");
+         return ajaxResult;
      }
 }

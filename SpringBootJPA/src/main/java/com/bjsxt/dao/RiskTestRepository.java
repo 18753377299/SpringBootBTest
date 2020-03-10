@@ -9,6 +9,4 @@ public interface RiskTestRepository extends JpaBaseRepository<TestTwo,Integer>{
 	
 	@Query("from TestTwo where id = ?1")
 	TestTwo queryTestTwoById(Integer id);
-	
-	
 }

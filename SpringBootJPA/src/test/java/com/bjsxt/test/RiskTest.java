@@ -1,8 +1,13 @@
 package com.bjsxt.test;
 
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
+
+import javax.sql.DataSource;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -11,6 +16,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.domain.Sort.Direction;
 import org.springframework.data.domain.Sort.Order;
+import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import com.bjsxt.App;
@@ -31,6 +37,34 @@ public class RiskTest {
 	@Autowired 
     private TestTwoKeyRepository testTwoKeyRepository;
 	
+	@Autowired
+	private JdbcTemplate jdbcTemplate;
+	
+	@Autowired
+	private DataSource dataSource;
+	@Test
+	public void testJdbcTemplate() {
+//		String sql = "select ";
+//		jdbcTemplate.query
+		Connection conn = null;
+        PreparedStatement stat = null;
+        ResultSet rs = null;
+        List<String[]> countListC = new ArrayList<String[]>();
+        try {
+            conn = dataSource.getConnection();
+            String sqlC = "select count(age) from  t_users";
+            stat = conn.prepareStatement(sqlC);
+            rs = stat.executeQuery();
+            for (; rs.next(); ) {
+                String[] str = new String[2];
+                str[0] = rs.getString(1);
+//                str[1] = rs.getString(2);
+                countListC.add(str);
+            }
+        }catch (Exception e) {
+        	e.printStackTrace();
+		}
+	}
     @Test
     @ApiOperation(value="对jpa的封装方法的各种类型进行测试（包括分页查询和添加各种查询的条件）,只剩下添加sql语句作为条件没有测试成功")
     public void test(){

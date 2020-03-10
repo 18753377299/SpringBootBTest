@@ -316,7 +316,7 @@ public class UsersRepositoryTest {
 				
 				
 				Predicate[] arr = new Predicate[list.size()];
-				
+//				query.where();
 				return cb.and(list.toArray(arr));
 			}
 		};

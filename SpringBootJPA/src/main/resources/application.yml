@@ -3,7 +3,12 @@ server:
 spring: 
    jpa: 
       hibernate:
-         ddl-auto: update 
+         #none防止执行的时候进行更新，update是继续更新，可以把驼峰命名的实体类以表的形式更新到数据库中
+         ddl-auto: none
+         naming: 
+            #驼峰命名会被自动转成数据库下划线命名，指定@Column的name也不起作用的问题的解决
+            implicit-strategy: org.hibernate.boot.model.naming.ImplicitNamingStrategyLegacyJpaImpl
+            physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl 
       show-sql: true  
    type: com.alibaba.druid.pool.DruidDataSource
    datasource: #\u6570\u636E\u6E90\u914D\u7F6E

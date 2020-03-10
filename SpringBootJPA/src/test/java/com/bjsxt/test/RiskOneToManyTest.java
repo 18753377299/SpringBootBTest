@@ -1,20 +1,24 @@
 package com.bjsxt.test;
 
 import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import com.bjsxt.App;
+import com.bjsxt.dao.RiskTestRepository;
+import com.bjsxt.dao.UsersRepository;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringBootTest(classes=App.class)
 public class RiskOneToManyTest {
 	
-//	@Autowired
-//	private UsersRepository usersRepository;
+	@Autowired
+	private UsersRepository usersRepository;
 	
-//	@Autowired
-//	private RiskRepository riskRepository;
+	@Autowired
+	private RiskTestRepository riskTestRepository;
+	
 	/**
 	 * 一对多关联关系的添加: https://blog.csdn.net/yingziisme/article/details/81436355
 	 */
