@@ -3,7 +3,7 @@ package com.bjsxt.pojo;
 //@Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
 //@Entity
 //@Table(name = "RiskReport_saleImaType")
-//public class RiskReportSaleImaType implements java.io.Serializable {
+public class RiskReportSaleImaType implements java.io.Serializable {
 
 //	private static final long serialVersionUID = 1L;
 //	/** 复合主键 */
@@ -123,4 +123,4 @@ package com.bjsxt.pojo;
 //		this.url = url;
 //	}
 
-//}
+}

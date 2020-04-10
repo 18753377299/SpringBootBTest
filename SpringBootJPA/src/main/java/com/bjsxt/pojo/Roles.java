@@ -4,16 +4,19 @@ import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
-
-import lombok.Data;
 
 /**
  * @Description: 一个角色对应多个用户
@@ -44,8 +47,13 @@ public class Roles implements Serializable{
 	private String rolename;
 	
 	@OneToMany(mappedBy="roles")
-//	@OneToMany(cascade = javax.persistence.CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "roles")
 	private Set<Users> users = new HashSet<>();
+
+	
+//	@JsonIgnore   //  设置@JsonIgnore,这个注解的意思是表示在序列化的时候，忽略这个属性
+	@ManyToMany(cascade=CascadeType.PERSIST,fetch=FetchType.EAGER)
+	@JoinTable(name="t_roles_menus",joinColumns=@JoinColumn(name="role_id"),inverseJoinColumns=@JoinColumn(name="menu_id"))
+	private Set<Menus> menus = new HashSet<>();
 
 	@Override
 	public boolean equals(Object obj) {
@@ -101,18 +109,14 @@ public class Roles implements Serializable{
 	public void setUsers(Set<Users> users) {
 		this.users = users;
 	}
-	
 
-//	@JsonIgnore   //  设置@JsonIgnore,这个注解的意思是表示在序列化的时候，忽略这个属性
-//	@ManyToMany(cascade=CascadeType.PERSIST,fetch=FetchType.EAGER)
-//	//@JoinTable:映射中间表
-//	//joinColumns:当前表中的主键所关联的中间表中的外键字段
-//	@JoinTable(name="t_roles_menus",joinColumns=@JoinColumn(name="role_id"),inverseJoinColumns=@JoinColumn(name="menu_id"))
-//	private Set<Menus> menus = new HashSet<>();
-	
-	
-	
-	
+	public Set<Menus> getMenus() {
+		return menus;
+	}
+
+	public void setMenus(Set<Menus> menus) {
+		this.menus = menus;
+	}
 	
 	
 }
