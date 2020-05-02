@@ -2,15 +2,20 @@ package com.bjsxt.service;
 
 import java.util.List;
 
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.alibaba.fastjson.JSON;
 import com.bjsxt.dao.TestRepository;
 import com.bjsxt.dao.TestTwoRepository;
+import com.bjsxt.dao.UsersRepository;
+import com.bjsxt.pojo.Roles;
 import com.bjsxt.pojo.Test;
 import com.bjsxt.pojo.TestTwo;
+import com.bjsxt.pojo.Users;
 
 @Service
 @Transactional
@@ -20,6 +25,8 @@ public class TestService {
 	TestRepository testRepository;
 	@Autowired
 	TestTwoRepository testTwoRepository;
+	@Autowired
+	private UsersRepository usersRepository;
 	
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
 	public String findAll() {
@@ -62,5 +69,19 @@ public class TestService {
 //		testRepository.deleteById(id);
 	}
 	
+	public Users queryUser(){
+		Users findOne = this.usersRepository.findOne(4);
+		Users userNew= new Users();
+		BeanUtils.copyProperties(findOne, userNew);
+		if(findOne!=null&&findOne.getRoles()!=null) {
+			Roles roleNew =new Roles();
+			Roles roles =findOne.getRoles();
+			BeanUtils.copyProperties(roles, roleNew);
+			roleNew.setUsers(null);
+			userNew.setRoles(roleNew);
+		}
+		System.out.println(findOne);
+		return userNew;
+	}
 	
 }

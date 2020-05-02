@@ -9,11 +9,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.alibaba.fastjson.JSON;
+import com.bjsxt.pojo.Users;
 import com.bjsxt.service.TestService;
 import com.bjsxt.vo.AjaxResult;
 import com.bjsxt.vo.RiskRequestVo;
-
-import io.swagger.annotations.ApiResponse;
 
 @RestController
 @RequestMapping("/test")
@@ -64,4 +64,15 @@ public class TestAPi {
 		 ajaxResult.setData("/home/middle/file/abc_ccc.doc");
          return ajaxResult;
      }
+	// 查询
+		 @RequestMapping(value = "/queryUser",method = RequestMethod.GET)
+	     public String queryUser(){
+			 Users users = testService.queryUser();
+			 if(null!=users) {
+				String json= JSON.toJSONString(users);
+				System.out.println(json);
+			 }
+	         return "hello";
+	     }
+	 
 }

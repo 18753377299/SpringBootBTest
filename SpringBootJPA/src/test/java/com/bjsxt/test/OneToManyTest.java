@@ -3,16 +3,20 @@ package com.bjsxt.test;
 import java.math.BigDecimal;
 import java.util.UUID;
 
+import org.codehaus.groovy.runtime.StringGroovyMethods;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
+import com.alibaba.fastjson.JSON;
 import com.bjsxt.App;
 import com.bjsxt.dao.RiskInfoDiscussRepository;
 import com.bjsxt.dao.UsersRepository;
 import com.bjsxt.pojo.RiskInfoDiscuss;
+import com.bjsxt.pojo.Roles;
 import com.bjsxt.pojo.Users;
 
 /**
@@ -43,12 +47,12 @@ public class OneToManyTest {
 		users.setName("小刚");
 		
 		//创建一个角色
-//		Roles roles = new Roles();
-//		roles.setRolename("管理员");
+		Roles roles = new Roles();
+		roles.setRolename("管理员");
 //		
 //		//关联
-//		roles.getUsers().add(users);
-//		users.setRoles(roles);
+		roles.getUsers().add(users);
+		users.setRoles(roles);
 		
 		//保存
 		this.usersRepository.save(users);
@@ -74,13 +78,27 @@ public class OneToManyTest {
 	public void testFind(){
 		try {
 			//		Users findOne = this.usersRepository.findOne(4);
-					Users findOne = this.usersRepository.findOne(4);
-					System.out.println(findOne);
+
+			Users findOne = this.usersRepository.findOne(4);
+			Users userNew= new Users();
+			BeanUtils.copyProperties(findOne, userNew);
+//			if(findOne!=null&&findOne.getRoles()!=null) {
+//				Roles roleNew =new Roles();
+//				Roles roles =findOne.getRoles();
+//				BeanUtils.copyProperties(roles, roleNew);
+//				roleNew.setUsers(null);
+//				userNew.setRoles(roleNew);
+//			}
+//			if(null!=userNew) {
+//				String json= JSON.toJSONString(userNew);
+//				System.out.println(json);
+//			}
+			System.out.println(findOne);
 //					usersRepository.delete(1);
-					System.out.println(UUID.randomUUID());
-					System.out.println(System.currentTimeMillis());
-			//		Roles roles = findOne.getRoles();
-			//		System.out.println(roles.getRolename());
+			System.out.println(UUID.randomUUID());
+			System.out.println(System.currentTimeMillis());
+	//		Roles roles = findOne.getRoles();
+	//		System.out.println(roles.getRolename());
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
