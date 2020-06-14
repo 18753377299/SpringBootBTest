@@ -8,7 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import com.bjsxt.App;
+import com.bjsxt.JpaApplication;
 import com.bjsxt.dao.RolesRepository;
 import com.bjsxt.pojo.Menus;
 import com.bjsxt.pojo.Roles;
@@ -19,7 +19,7 @@ import com.bjsxt.pojo.Roles;
  *
  */
 @RunWith(SpringJUnit4ClassRunner.class)
-@SpringBootTest(classes=App.class)
+@SpringBootTest(classes=JpaApplication.class)
 public class ManyToManyTest {
 
 	@Autowired

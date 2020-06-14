@@ -17,10 +17,10 @@ public class Maskify {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-        
         return returnObj.toString();        
     }
     public static void main(String[]args){
-        maskify("64607935616");
+        String  result =  maskify("64607935616");
+        System.out.println(result);
     }
 }

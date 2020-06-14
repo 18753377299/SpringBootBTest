@@ -17,38 +17,38 @@
 		<thymeleaf.version>3.0.2.RELEASE</thymeleaf.version>
 		<thymeleaf-layout-dialect.version>2.0.4</thymeleaf-layout-dialect.version>
 	</properties>
-	<repositories>
-	     <repository>
-			<id>aliyun</id>
-			<name>Team 	Nexus Repository</name>
-			<url>http://maven.aliyun.com/nexus/content/groups/public</url>
-			<releases>
-				<enabled>true</enabled>
-			</releases>
-			<snapshots>
-				<enabled>true</enabled>
-			</snapshots>
-		</repository>
-	    <repository>
-	      <id>ispeco</id>
-	      <url>http://maven.supermapol.com/</url>
-	    </repository>
-	    <repository>
-	      <id>supermap</id>
-	      <url>http://maven.supermap.io/</url>
-	    </repository>
-	</repositories>
+<!-- 	<repositories> -->
+<!-- 	     <repository> -->
+<!-- 			<id>aliyun</id> -->
+<!-- 			<name>Team 	Nexus Repository</name> -->
+<!-- 			<url>http://maven.aliyun.com/nexus/content/groups/public</url> -->
+<!-- 			<releases> -->
+<!-- 				<enabled>true</enabled> -->
+<!-- 			</releases> -->
+<!-- 			<snapshots> -->
+<!-- 				<enabled>true</enabled> -->
+<!-- 			</snapshots> -->
+<!-- 		</repository> -->
+<!-- 	    <repository> -->
+<!-- 	      <id>ispeco</id> -->
+<!-- 	      <url>http://maven.supermapol.com/</url> -->
+<!-- 	    </repository> -->
+<!-- 	    <repository> -->
+<!-- 	      <id>supermap</id> -->
+<!-- 	      <url>http://maven.supermap.io/</url> -->
+<!-- 	    </repository> -->
+<!-- 	</repositories> -->
 	<dependencies>
-		<dependency>
-			  <groupId>com.supermap</groupId>
-			  <artifactId>com.supermap.data</artifactId>
-			  <version>9.0.0-15319</version>
-		</dependency>
-		<dependency>
-			  <groupId>com.supermap</groupId>
-			  <artifactId>com.supermap.mapping</artifactId>
-			  <version>9.0.0-15319</version>
-		</dependency>
+<!-- 		<dependency> -->
+<!-- 			  <groupId>com.supermap</groupId> -->
+<!-- 			  <artifactId>com.supermap.data</artifactId> -->
+<!-- 			  <version>9.0.0-15319</version> -->
+<!-- 		</dependency> -->
+<!-- 		<dependency> -->
+<!-- 			  <groupId>com.supermap</groupId> -->
+<!-- 			  <artifactId>com.supermap.mapping</artifactId> -->
+<!-- 			  <version>9.0.0-15319</version> -->
+<!-- 		</dependency> -->
 		<!-- springBoot的启动器 -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -59,7 +59,6 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-thymeleaf</artifactId>
 		</dependency>
-
 		<!-- springBoot的启动器 -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -71,6 +70,12 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 		</dependency>
+		
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+		</dependency>
+		
 
 		<!-- mysql -->
 		<dependency>
@@ -119,7 +124,27 @@
 		<dependency>
 			<groupId>org.apache.commons</groupId>
 			<artifactId>commons-lang3</artifactId>
-			<version>3.4</version>
+			<version>3.7</version>
+		</dependency>
+		<dependency>
+			<groupId>commons-beanutils</groupId>
+			<artifactId>commons-beanutils</artifactId>
+<!-- 			<version>1.9.3</version> -->
+		</dependency>
+		<dependency>
+			<groupId>commons-collections</groupId>
+			<artifactId>commons-collections</artifactId>
+<!-- 			<version>3.2.1</version> -->
+		</dependency>
+		<dependency>
+			<groupId>commons-lang</groupId>
+			<artifactId>commons-lang</artifactId>
+			<version>2.6</version>
+		</dependency>
+		<dependency>
+			<groupId>commons-logging</groupId>
+			<artifactId>commons-logging</artifactId>
+			<version>1.1.1</version>
 		</dependency>
 		<!--Swagger-UI API文档生产工具 begin -->
         <dependency>
@@ -148,6 +173,43 @@
 			<artifactId>fastjson</artifactId>
 			<version>1.2.47</version>
 		</dependency>
+		<dependency>
+		    <groupId>org.freemarker</groupId>
+		    <artifactId>freemarker</artifactId>
+		 </dependency>
+		 <dependency>
+			<groupId>org.apache.ant</groupId>
+			<artifactId>ant</artifactId>
+			<version>1.9.7</version>
+		 </dependency>
+		 <!-- https://mvnrepository.com/artifact/commons-codec/commons-codec -->
+		 <!-- 用于加密解密begin -->
+		<dependency>
+		    <groupId>commons-codec</groupId>
+		    <artifactId>commons-codec</artifactId>
+		</dependency>
+		<!-- 用于加密解密end -->
+		<!--读取excel文件 begin-->
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi</artifactId>
+			<version>4.1.2</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi-ooxml</artifactId>
+			<version>4.1.2</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi-ooxml-schemas</artifactId>
+			<version>4.1.2</version>
+		</dependency>
+		<!--读取excel文件 end-->
+		<dependency>
+	      <groupId>org.springframework.boot</groupId>
+	      <artifactId>spring-boot-starter-validation</artifactId>
+	    </dependency>
 	</dependencies>
 	<dependencyManagement>
 		<dependencies>

@@ -21,7 +21,7 @@ import org.springframework.data.domain.Sort.Order;
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.test.annotation.Rollback;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
-import com.bjsxt.App;
+import com.bjsxt.JpaApplication;
 import com.bjsxt.dao.UsersRepository;
 import com.bjsxt.dao.UsersRepositoryByName;
 import com.bjsxt.dao.UsersRepositoryCrudRepository;
@@ -36,7 +36,7 @@ import com.bjsxt.pojo.Users;
  *
  */
 @RunWith(SpringJUnit4ClassRunner.class)
-@SpringBootTest(classes = App.class)
+@SpringBootTest(classes = JpaApplication.class)
 public class UsersRepositoryTest {
 
 	@Autowired

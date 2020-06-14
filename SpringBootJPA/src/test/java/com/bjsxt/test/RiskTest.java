@@ -19,7 +19,7 @@ import org.springframework.data.domain.Sort.Order;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import com.bjsxt.App;
+import com.bjsxt.JpaApplication;
 import com.bjsxt.common.jpa.condition.Restrictions;
 import com.bjsxt.common.jpa.vo.Criteria;
 import com.bjsxt.dao.RiskTestRepository;
@@ -30,7 +30,7 @@ import com.bjsxt.pojo.TestTwoKey;
 import io.swagger.annotations.ApiOperation;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@SpringBootTest(classes=App.class)
+@SpringBootTest(classes=JpaApplication.class)
 public class RiskTest {
 	@Autowired 
     private RiskTestRepository riskTestRepository;

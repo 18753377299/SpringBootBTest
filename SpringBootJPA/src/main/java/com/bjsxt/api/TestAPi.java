@@ -1,8 +1,12 @@
 package com.bjsxt.api;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.NotNull;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -15,8 +19,11 @@ import com.bjsxt.service.TestService;
 import com.bjsxt.vo.AjaxResult;
 import com.bjsxt.vo.RiskRequestVo;
 
+import io.swagger.annotations.ApiOperation;
+
 @RestController
 @RequestMapping("/test")
+@Validated
 //@EnableWebMvc
 public class TestAPi {
 	
@@ -65,14 +72,15 @@ public class TestAPi {
          return ajaxResult;
      }
 	// 查询
-		 @RequestMapping(value = "/queryUser",method = RequestMethod.GET)
-	     public String queryUser(){
-			 Users users = testService.queryUser();
-			 if(null!=users) {
-				String json= JSON.toJSONString(users);
-				System.out.println(json);
-			 }
-	         return "hello";
-	     }
+	 @RequestMapping(value = "/queryUser",method = RequestMethod.GET)
+     public String queryUser(){
+		 Users users = testService.queryUser();
+		 if(null!=users) {
+			String json= JSON.toJSONString(users);
+			System.out.println(json);
+		 }
+         return "hello";
+     }
+	 
 	 
 }
