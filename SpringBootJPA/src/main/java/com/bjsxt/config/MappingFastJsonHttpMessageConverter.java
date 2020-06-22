@@ -1,5 +1,7 @@
 package com.bjsxt.config;
 
+import static org.hamcrest.CoreMatchers.nullValue;
+
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
@@ -53,6 +55,7 @@ public class MappingFastJsonHttpMessageConverter extends AbstractHttpMessageConv
         throws IOException, HttpMessageNotReadableException{
     	
     	ByteArrayOutputStream baos = new ByteArrayOutputStream();
+    	Object  object = null;
     	try {    		
             int i;
             while((i = inputMessage.getBody().read()) != -1) 
@@ -64,13 +67,14 @@ public class MappingFastJsonHttpMessageConverter extends AbstractHttpMessageConv
             if(o!=null){
              return  o.get(0);
             }
-           
+          
             
             return null;*/
+            object  = JSON.parseObject(baos.toString(),clazz);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-        return JSON.parseObject(baos.toString(),clazz);
+        return object;
     }
 
     protected void writeInternal(Object o, HttpOutputMessage outputMessage)

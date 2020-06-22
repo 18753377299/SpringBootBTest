@@ -1,0 +1,10 @@
+server: 
+  port: 9001
+export: 
+   word: 
+      filePath: D:/FilePackage
+#随机值： 配置文件之后解析一次，不会根据请求次数变化而产生新的随机值。
+num: ${random.int}
+   
+
+  

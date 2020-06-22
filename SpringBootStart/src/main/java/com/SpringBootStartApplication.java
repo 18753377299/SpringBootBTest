@@ -19,6 +19,7 @@ import com.example.common.servlet.SecondServlet;
 
 @SpringBootApplication
 //(exclude= {DataSourceAutoConfiguration.class})
+//@MapperScan 用户扫描MyBatis的Mapper接口
 @MapperScan("com.example")
 @ComponentScan(basePackages="com.example")
 /*在 springBoot 启动时会扫描@WebServlet，并将该类实例化*/

@@ -20,6 +20,7 @@ public class ExportApi {
 	@Autowired
 	private ExportService exportService;
 	
+	
 	@RequestMapping(value="/exportWordFile")
 	public String exportWordFile() {
 		String path = exportService.exportWordFile();

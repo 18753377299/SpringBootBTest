@@ -16,7 +16,7 @@ public class DemoController {
 	public String getUsername() {
 		System.out.println("====================getin");
 		String aa= demoService.getUserName();
-		System.out.println("=================after");
+		System.out.println("=================after");		
 		return aa;
 	}
 }

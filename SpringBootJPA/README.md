@@ -25,5 +25,18 @@ INSERT INTO t_roles (roleid, rolename) VALUES (1, '张三丰');
 INSERT INTO t_roles (roleid, rolename) VALUES (2, '风清扬');
 INSERT INTO t_roles (roleid, rolename) VALUES (3, '令狐冲');
 
+#Spring Boot 件 的配置文件 -  多环境配置
+application-dev.properties 开发环境
+application-test.properteis 测试环境
+application-prod.properteis 生产环境
+
+###运行项目：
+java -jar xxx.jar --spring.profiles.active={profile}
+
+
+###完成的命令：
+java -jar springboot-helloworld-0.0.1-SNAPSHOT.jar --spring.profiles.active=
+test|dev|prod
+
 
 

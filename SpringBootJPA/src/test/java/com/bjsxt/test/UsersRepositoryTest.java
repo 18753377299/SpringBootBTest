@@ -8,6 +8,7 @@ import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Predicate;
 import javax.persistence.criteria.Root;
 import javax.transaction.Transactional;
+
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,6 +22,7 @@ import org.springframework.data.domain.Sort.Order;
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.test.annotation.Rollback;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+
 import com.bjsxt.JpaApplication;
 import com.bjsxt.dao.UsersRepository;
 import com.bjsxt.dao.UsersRepositoryByName;
@@ -29,6 +31,7 @@ import com.bjsxt.dao.UsersRepositoryPagingAndSorting;
 import com.bjsxt.dao.UsersRepositoryQueryAnnotation;
 import com.bjsxt.dao.UsersRepositorySpecification;
 import com.bjsxt.pojo.Users;
+import com.bjsxt.service.TestService;
 
 /**
  * 测试类
@@ -57,6 +60,13 @@ public class UsersRepositoryTest {
 	@Autowired
 	private UsersRepositorySpecification usersRepositorySpecification;
 	
+	@Autowired
+	TestService testService;
+	
+	@Test
+	public void query() {
+		testService.findAll();
+	}
 	
 	@Test
 	public void testSave() {

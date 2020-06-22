@@ -8,8 +8,10 @@ import javax.validation.Validator;
 import javax.validation.constraints.Max;
 import javax.validation.groups.Default;
 
+import org.apache.commons.lang3.StringUtils;
 import org.hibernate.validator.constraints.NotBlank;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.util.Assert;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.ObjectError;
 import org.springframework.validation.annotation.Validated;
@@ -21,10 +23,8 @@ import org.springframework.web.bind.annotation.RestController;
 import com.bjsxt.common.exception.customException.ApplicationException;
 import com.bjsxt.common.valid.group.GroupA;
 import com.bjsxt.common.valid.group.GroupB;
-import com.bjsxt.pojo.Parent;
 import com.bjsxt.vo.RiskRequestVo;
 
-import freemarker.template.utility.NormalizeNewlines;
 import io.swagger.annotations.ApiOperation;
 
 /*该类用于进行字段校验测试*/
@@ -34,11 +34,24 @@ import io.swagger.annotations.ApiOperation;
 public class RiskValidateApi {
 	@Autowired
     private Validator validator;
-    
+	
+	@GetMapping("/getUserTest")
+	@ApiOperation(value="使用get方式对字段进行校验",notes="addby liqiankun20200611 begin")
+    public String getUserTest(String name,int age) {
+		Assert.notNull(name,  "name_null 不能为空");
+		Assert.hasText(name, "name 不能为空");
+		if(name==""||name=="null"||name==null) {
+			throw new ApplicationException("name 不能为空");
+		}
+		Assert.hasLength(name, "name 不能为''");
+        return "name: " + name + " ,age:" + age;
+    }
+	
 	@GetMapping("/getUser")
 	@ApiOperation(value="使用get方式对字段进行校验",notes="addby liqiankun20200611 begin")
     public String getUserStr(@NotBlank(message = "name 不能为空") String name,
    		 @Max(value = 99, message = "不能大于99岁") int age) {
+		Assert.isNull(name, "name 不能为空");
        return "name: " + name + " ,age:" + age;
     }
 	
