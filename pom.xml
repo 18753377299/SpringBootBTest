@@ -17,8 +17,8 @@
 <!--   </parent> -->
   <properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-<!-- 		<maven.compiler.source>1.8</maven.compiler.source> -->
-<!-- 		<maven.compiler.target>1.8</maven.compiler.target> -->
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>
 		<junit.version>4.12</junit.version>
 		<log4j.version>1.2.17</log4j.version>
 		<lombok.version>1.16.18</lombok.version>
@@ -91,19 +91,19 @@
 				<artifactId>maven-resources-plugin</artifactId>
 				<version>2.6</version>
 				<configuration>
-					<source>1.7</source>  
-	                <target>1.7</target>  
+<!-- 					<source>1.7</source>   -->
+<!-- 	                <target>1.7</target>   -->
 	                
-<!-- 					<delimiters> -->
-<!-- 						<delimit>$</delimit> -->
-<!-- 					</delimiters> -->
+					<delimiters>
+						<delimit>$</delimit>
+					</delimiters>
 				</configuration>
 			</plugin>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
-<!-- 				<version>1.5.9.RELEASE</version> -->
-				<version>1.5.6.RELEASE</version>
+				<version>1.5.9.RELEASE</version>
+<!-- 				<version>1.5.6.RELEASE</version> -->
 				<executions>
 					<execution>
 						<goals>

@@ -1,6 +1,7 @@
 package com.example.service.impl;
 
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -68,7 +69,7 @@ public class RiskMapServiceImpl implements RiskMapService{
 			String url=bundleMap.getString("rainWeatherUrl");
 			/*获取某一日期的下几天天几点零分的日期,yyyyMMddHH*/
 			String dataTime=  DateUtils.getNextDateEightHour(newDate,day,hour);
-			String insertTimeForHis=  DateUtils.getCurrentDateFormat(newDate);
+			String insertTimeForHis=  DateUtils.getCurrentDateFormat(new Date());
 			// 存储到数据集中的日期格式是yyyyMMdd
 			String dataTimeNew = DateUtils.getNextDateFormat(newDate,0);
 //			String dataTime=  DateUtils.getNextDateEightHour(new Date(),1,8);
@@ -89,7 +90,7 @@ public class RiskMapServiceImpl implements RiskMapService{
 			// 将气象局中的数据转化成对象
 				/*对降雨文件信息进行备份*/
 			
-			filePath = filePath+"/map/Rain/RainSH_"+dataTime+".txt";
+			filePath = filePath+"/map/RainSH/RainSH_"+dataTime+".txt";
 			FileUtils.writeToFile(responseJson,filePath);
 			/* 气象局数据组织并更新到数据库中*/
 		} catch (Exception e) {
@@ -107,13 +108,14 @@ public class RiskMapServiceImpl implements RiskMapService{
 	 */	
 	public List<String> gainWeatherRainYJData(Date newDate,int day,int hour){
 		List<String>  pathList = new ArrayList<String>();
-		String filePath  = bundle.getString("saveRootPath")+bundle.getString("saveTypePath");
 		try {
+			String dateDir = DateUtils.getNextDateEightHourMinu(newDate,0,hour);
 			String url=bundleMap.getString("rainWeatherUrl");
 			for (int  i=1;i<=day;i++){
+				String filePath  = bundle.getString("saveRootPath")+bundle.getString("saveTypePath");
 				/*获取某一日期的下几天天几点零分的日期*/
 				String dataTime=  DateUtils.getNextDateEightHourMinu(newDate,i,hour);
-				String insertTimeForHis=  DateUtils.getCurrentDateFormat(newDate);
+				String insertTimeForHis=  DateUtils.getCurrentDateFormat(new Date());
 				// 存储到数据集中的日期格式是yyyyMMdd
 				String dataTimeNew = DateUtils.getNextDateFormat(newDate,i);
 				//组织参数的json字符串
@@ -131,7 +133,7 @@ public class RiskMapServiceImpl implements RiskMapService{
 				responseJson =  responseJson.replace(sourceJson, targetJson);
 				responseJson =  responseJson.replace(sourceJsonTwo, targetJsonTwo);
 				// 将气象局中的数据转化成对象
-				filePath = filePath+"/map/Rain/RainYJ_"+dataTime+".txt";
+				filePath = filePath+"/map/RainYJ_"+dateDir+"/RainYJ_"+dataTime+".txt";
 				FileUtils.writeToFile(responseJson,filePath);
 				pathList.add(filePath);
 			}
