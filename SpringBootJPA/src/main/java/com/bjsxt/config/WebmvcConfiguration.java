@@ -28,6 +28,10 @@ import com.alibaba.fastjson.serializer.SerializerFeature;
 import com.alibaba.fastjson.support.config.FastJsonConfig;
 import com.alibaba.fastjson.support.spring.FastJsonHttpMessageConverter;
 
+
+/**
+ * 对请求和返回的json进行配置
+ * */
 @Configuration
 public class WebmvcConfiguration implements WebMvcConfigurer{
 	
