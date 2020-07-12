@@ -31,7 +31,7 @@ import org.easy.excel.exception.ExcelException;
 import org.easy.excel.result.ExcelImportResult;
 import org.easy.util.ReflectUtil;
 
-import com.bjsxt.common.utils.PubTools;
+import com.example.common.utils.PubTools;
 /**
  * Excel导入实现类
  * @author lisuo
