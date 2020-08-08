@@ -3,8 +3,10 @@ package com.example.common.redis;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.data.redis.connection.RedisConnectionFactory;
 import org.springframework.data.redis.connection.jedis.JedisConnectionFactory;
 import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.data.redis.serializer.StringRedisSerializer;
 
 import redis.clients.jedis.JedisPoolConfig;
@@ -51,7 +53,6 @@ public class RedisConfig {
 		//主机地址
 //		factory.setHostName("192.168.70.128");
 //		factory.setHostName("192.168.2.102");
-		
 //		factory.setHostName("localhost");
 //		//端口
 //		factory.setPort(6379);
@@ -65,9 +66,9 @@ public class RedisConfig {
 	* 3.创建 RedisTemplate:用于执行 Redis 操作的方法
 	*/
 	@Bean
-	public RedisTemplate<String,Object>
+	public RedisTemplate<Object,Object>
 					redisTemplate(JedisConnectionFactory factory){
-		RedisTemplate<String, Object> template = new RedisTemplate<>();
+		RedisTemplate<Object, Object> template = new RedisTemplate<>();
 		//关联
 		template.setConnectionFactory(factory);
 		//为 key 设置序列化器
@@ -76,4 +77,12 @@ public class RedisConfig {
 		template.setValueSerializer(new StringRedisSerializer());
 		return template;
 	}
+	
+	@Bean
+	public StringRedisTemplate stringRedisTemplate(RedisConnectionFactory factory) {
+		StringRedisTemplate stringRedisTemplate = new StringRedisTemplate();
+		stringRedisTemplate.setConnectionFactory(factory);
+		return stringRedisTemplate;
+	}
+	
 }

@@ -221,6 +221,11 @@
 <!-- 		    <artifactId>spring-boot-starter-web</artifactId> -->
 <!-- 	  </dependency> -->
 	  <!--配置RestTemplate引入依赖 end-->
+	  <dependency>
+	    <groupId>org.json</groupId>
+	    <artifactId>json</artifactId>
+	    <version>20190722</version>
+	  </dependency>
 	</dependencies>
 	<dependencyManagement>
 		<dependencies>

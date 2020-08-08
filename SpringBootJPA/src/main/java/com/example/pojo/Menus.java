@@ -12,6 +12,8 @@ import javax.persistence.ManyToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
+import com.alibaba.fastjson.annotation.JSONField;
+
 import lombok.Data;
 
 /**
@@ -42,6 +44,7 @@ public class Menus {
 	@Column(name="fatherid")
 	private Integer fatherid;
 	
+//	@JSONField(serialize=false)
 	@ManyToMany(mappedBy="menus")
 	private Set<Roles> roles = new HashSet<>();
 

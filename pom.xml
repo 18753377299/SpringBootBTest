@@ -37,8 +37,8 @@
 			<dependency>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-dependencies</artifactId>
-				<version>1.5.6.RELEASE</version>
-<!-- 				<version>1.5.9.RELEASE</version> -->
+<!-- 				<version>1.5.6.RELEASE</version> -->
+				<version>1.5.9.RELEASE</version>
 <!-- 				<version>2.1.1.RELEASE</version> -->
 				<type>pom</type>
 				<scope>import</scope>
@@ -93,7 +93,6 @@
 				<configuration>
 <!-- 					<source>1.7</source>   -->
 <!-- 	                <target>1.7</target>   -->
-	                
 					<delimiters>
 						<delimit>$</delimit>
 					</delimiters>

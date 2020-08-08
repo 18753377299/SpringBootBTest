@@ -29,16 +29,17 @@ public class TestService {
 	private UsersRepository usersRepository;
 	
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
-	public String findAll() {
+	public List<Test> findAll() {
+		List<Test> testList = null;
 		try {
-			List<Test> testList =  testRepository.findAll();
+			testList =  testRepository.findAll();
 			for (Test test: testList) {
 				System.out.println("id:"+test.getId()+",name:"+test.getName());
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		return "findAll";
+		return testList;
 	}
 //	@Transactional(propagation = Propagation.REQUIRED)
 	public void insertTest() {

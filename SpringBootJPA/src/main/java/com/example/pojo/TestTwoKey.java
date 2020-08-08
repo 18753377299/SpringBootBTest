@@ -8,6 +8,9 @@ import javax.persistence.AttributeOverrides;
 import javax.persistence.Column;
 import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import org.springframework.data.annotation.CreatedDate;
@@ -48,5 +51,9 @@ public class TestTwoKey implements Serializable{
 //	@Column(name = "OPERATETIMEFORHIS",insertable=false)
 	@Column(name = "updatetime")
 	private Date updateTime;
+	
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "id", nullable = false, insertable = false, updatable = false)
+	private TestTwo testTwo;
 	
 }

@@ -1,6 +1,7 @@
 package com.example.api;
 
 import java.io.IOException;
+import java.net.URI;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -15,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
+import com.example.pojo.Test;
 
 @RestController
 public class RestTemplateApi {
@@ -37,12 +39,12 @@ public class RestTemplateApi {
 	@RequestMapping("/testRestTemplate")
     public Object testRestTemplate() throws IOException {
 //		http://localhost:15021/test/queryUser
-        ResponseEntity result= restTemplate.getForEntity("http://localhost:15021/test/hello",ResponseEntity.class);
+        ResponseEntity<Test> result= restTemplate.getForEntity("http://localhost:15021/test/hello",Test.class);
         return result.getBody();
     }
 	@RequestMapping("/sayhello")
 	public String sayHello() {
-	    ResponseEntity<String> responseEntity = restTemplate.getForEntity("http://localhost:15021/test/hello", String.class, "张三");
+	    ResponseEntity<String> responseEntity = restTemplate.getForEntity("http://localhost:15021/test/helloTwo", String.class, "张三");
 	    return responseEntity.getBody();
 	}
 	@RequestMapping("/sayhello2")
@@ -53,23 +55,39 @@ public class RestTemplateApi {
 	    return responseEntity.getBody();
 	}
 //	getForObject
-//	@RequestMapping("/book2")
-//	public Book book2() {
-//	    Book book = restTemplate.getForObject("http://HELLO-SERVICE/getbook1", Book.class);
-//	    return book;
-//	}
+	@RequestMapping("/book2")
+	public Test book2() {
+		Test test = restTemplate.getForObject("http://localhost:15021/test/hello",Test.class);
+	    return test;
+	}
 	
 //	postForEntity
-//	@RequestMapping("/book3")
-//	public Book book3() {
-//	    Book book = new Book();
-//	    book.setName("红楼梦");
-//	    ResponseEntity<Book> responseEntity = restTemplate.postForEntity("http://HELLO-SERVICE/getbook2", book, Book.class);
-//	    return responseEntity.getBody();
-//	}
+	@RequestMapping("/book3")
+	public Test book3() {
+		Test book = new Test();
+	    book.setName("红楼梦");
+	    ResponseEntity<Test> responseEntity = restTemplate.postForEntity("http://localhost:15021/test/hello", book, Test.class);
+	    return responseEntity.getBody();
+	}
 	
 //	postForObject
+	@RequestMapping("/book4")
+	public Test book4() {
+		Test book = new Test();
+	    book.setName("红楼梦");
+	    Test test  = restTemplate.postForObject("http://localhost:15021/test/hello", book, Test.class);
+	    return test;
+	}
 //	postForLocation
+	@RequestMapping("/book5")
+	public String book5() {
+		Test book = new Test();
+	    book.setName("红楼梦");
+	    URI uri = restTemplate.postForLocation("http://localhost:15021/test/hello", book);
+	    String path= uri.getPath()+":"+uri.getHost()+":"+uri.getPort();
+	    return path;
+	}
+	
 	
 	
 	

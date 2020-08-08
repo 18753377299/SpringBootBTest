@@ -16,6 +16,8 @@ import org.springframework.http.client.ClientHttpRequestFactory;
 import org.springframework.http.client.HttpComponentsClientHttpRequestFactory;
 import org.springframework.web.client.RestTemplate;
 
+import com.example.common.interceptor.RestTemplateInterceptor;
+
 /*初始化连接池:https://www.cnblogs.com/yuexiaoyun/articles/13034028.html*/
 
 @Configuration
@@ -45,7 +47,10 @@ public class RestTemplateConfig {
 
     @Bean
     public RestTemplate restTemplate() {
-        return new RestTemplate(httpRequestFactory());
+    	RestTemplate restTemplate = new RestTemplate(httpRequestFactory());
+    	/*添加RestTemplate拦截器*/
+    	restTemplate.getInterceptors().add(new RestTemplateInterceptor());
+        return restTemplate;
     }
 
     @Bean

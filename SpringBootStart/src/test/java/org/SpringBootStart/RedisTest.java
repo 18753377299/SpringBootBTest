@@ -1,10 +1,13 @@
 package org.SpringBootStart;
 
+import java.util.concurrent.TimeUnit;
+
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.data.redis.serializer.Jackson2JsonRedisSerializer;
 import org.springframework.data.redis.serializer.JdkSerializationRedisSerializer;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
@@ -17,14 +20,19 @@ import com.example.po.Users;
 public class RedisTest {
 	
 	@Autowired
-	private RedisTemplate<String, Object> redisTemplate;
+	private RedisTemplate<Object, Object> redisTemplate;
 	
+	//注入redisTemplate
+    @Autowired
+    private StringRedisTemplate  stringRedisTemplate;
+    
 	/**
 	* 添加一个字符串
 	*/
 	@Test
 	public void testSet(){
-		this.redisTemplate.opsForValue().set("key", "北京尚学堂");
+//		this.redisTemplate.opsForValue().set("key", "22");
+		this.redisTemplate.opsForValue().set("second", "123", 30, TimeUnit.SECONDS);
 	}
 	/**
 	* 获取一个字符串

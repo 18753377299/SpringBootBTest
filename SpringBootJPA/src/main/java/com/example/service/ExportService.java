@@ -11,11 +11,13 @@ import java.util.Map;
 import org.apache.commons.codec.binary.Base64;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.example.common.utils.WordUtils;
 import com.example.pojo.User;
 
 @Service
+@Transactional
 public class ExportService {
 
 	@Value("${export.word.filePath}")

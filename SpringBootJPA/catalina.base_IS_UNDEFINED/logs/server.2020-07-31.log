@@ -1,0 +1,304 @@
+2020-07-31 10:49:33.588 [main] INFO  com.example.JpaApplication - Starting JpaApplication on MSI with PID 17320 (D:\FileWorkspace\eclipse_workspace\SpringBootBTest\SpringBootJPA\target\classes started by lqk in D:\FileWorkspace\eclipse_workspace\SpringBootBTest\SpringBootJPA)
+2020-07-31 10:49:33.591 [main] INFO  com.example.JpaApplication - No active profile set, falling back to default profiles: default
+2020-07-31 10:49:33.693 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 5.3.6.Final
+2020-07-31 10:49:33.733 [main] INFO  o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@62ef27a8: startup date [Fri Jul 31 10:49:33 GMT+08:00 2020]; root of context hierarchy
+2020-07-31 10:49:34.744 [main] INFO  o.s.b.c.e.tomcat.TomcatEmbeddedServletContainer - Tomcat initialized with port(s): 15021 (http)
+2020-07-31 10:49:34.750 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-07-31 10:49:34.750 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.23
+2020-07-31 10:49:34.898 [localhost-startStop-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-07-31 10:49:34.899 [localhost-startStop-1] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1166 ms
+2020-07-31 10:49:35.045 [localhost-startStop-1] INFO  o.s.boot.web.servlet.ServletRegistrationBean - Mapping servlet: 'dispatcherServlet' to [/]
+2020-07-31 10:49:35.048 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'characterEncodingFilter' to: [/*]
+2020-07-31 10:49:35.048 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2020-07-31 10:49:35.048 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2020-07-31 10:49:35.048 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*]
+2020-07-31 10:49:39.076 [main] INFO  o.s.orm.jpa.LocalContainerEntityManagerFactoryBean - Building JPA container EntityManagerFactory for persistence unit 'default'
+2020-07-31 10:49:39.094 [main] INFO  org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2020-07-31 10:49:39.142 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {5.0.12.Final}
+2020-07-31 10:49:39.143 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+2020-07-31 10:49:39.144 [main] INFO  org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+2020-07-31 10:49:39.173 [main] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2020-07-31 10:49:39.264 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2020-07-31 10:49:39.276 [main] INFO  o.h.engine.jdbc.env.internal.LobCreatorBuilderImpl - HHH000422: Disabling contextual LOB creation as connection was null
+2020-07-31 10:49:39.277 [main] INFO  org.hibernate.type.BasicTypeRegistry - HHH000270: Type registration [java.util.UUID] overrides previous : org.hibernate.type.UUIDBinaryType@124eb83d
+2020-07-31 10:49:39.432 [main] WARN  org.hibernate.orm.deprecation - HHH90000014: Found use of deprecated [org.hibernate.id.SequenceHiLoGenerator] sequence-based id generator; use org.hibernate.id.enhanced.SequenceStyleGenerator instead.  See Hibernate Domain Model Mapping Guide for details.
+2020-07-31 10:49:39.434 [main] WARN  org.hibernate.orm.deprecation - HHH90000014: Found use of deprecated [org.hibernate.id.SequenceHiLoGenerator] sequence-based id generator; use org.hibernate.id.enhanced.SequenceStyleGenerator instead.  See Hibernate Domain Model Mapping Guide for details.
+2020-07-31 10:49:39.434 [main] WARN  org.hibernate.orm.deprecation - HHH90000014: Found use of deprecated [org.hibernate.id.SequenceHiLoGenerator] sequence-based id generator; use org.hibernate.id.enhanced.SequenceStyleGenerator instead.  See Hibernate Domain Model Mapping Guide for details.
+2020-07-31 10:49:39.434 [main] WARN  org.hibernate.orm.deprecation - HHH90000014: Found use of deprecated [org.hibernate.id.SequenceHiLoGenerator] sequence-based id generator; use org.hibernate.id.enhanced.SequenceStyleGenerator instead.  See Hibernate Domain Model Mapping Guide for details.
+2020-07-31 10:49:39.664 [main] INFO  o.s.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-07-31 10:49:40.481 [main] INFO  o.h.hql.internal.QueryTranslatorFactoryInitiator - HHH000397: Using ASTQueryTranslatorFactory
+2020-07-31 10:49:40.560 [main] WARN  org.hibernate.hql.internal.ast.HqlSqlWalker - [DEPRECATION] Encountered positional parameter near line 1, column 43 in HQL: [update com.example.pojo.Users set name  = ? where id  = ?].  Positional parameter are considered deprecated; use named parameters or JPA-style positional parameters instead.
+2020-07-31 10:49:40.560 [main] WARN  org.hibernate.hql.internal.ast.HqlSqlWalker - [DEPRECATION] Encountered positional parameter near line 1, column 57 in HQL: [update com.example.pojo.Users set name  = ? where id  = ?].  Positional parameter are considered deprecated; use named parameters or JPA-style positional parameters instead.
+2020-07-31 10:49:40.563 [main] WARN  org.hibernate.hql.internal.ast.HqlSqlWalker - [DEPRECATION] Encountered positional parameter near line 1, column 42 in HQL: [from com.example.pojo.Users where name = ?].  Positional parameter are considered deprecated; use named parameters or JPA-style positional parameters instead.
+2020-07-31 10:49:40.626 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerAdapter - Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@62ef27a8: startup date [Fri Jul 31 10:49:33 GMT+08:00 2020]; root of context hierarchy
+2020-07-31 10:49:40.675 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/export/exportWordFile]}" onto public java.lang.String com.example.api.ExportApi.exportWordFile()
+2020-07-31 10:49:40.676 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/book2]}" onto public com.example.pojo.Test com.example.api.RestTemplateApi.book2()
+2020-07-31 10:49:40.676 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/book4]}" onto public com.example.pojo.Test com.example.api.RestTemplateApi.book4()
+2020-07-31 10:49:40.676 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/book5]}" onto public java.lang.String com.example.api.RestTemplateApi.book5()
+2020-07-31 10:49:40.676 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/testRestTemplate]}" onto public java.lang.Object com.example.api.RestTemplateApi.testRestTemplate() throws java.io.IOException
+2020-07-31 10:49:40.676 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/book3]}" onto public com.example.pojo.Test com.example.api.RestTemplateApi.book3()
+2020-07-31 10:49:40.677 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/testHttpClient]}" onto public java.lang.Object com.example.api.RestTemplateApi.getUser(java.lang.String) throws java.io.IOException
+2020-07-31 10:49:40.678 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/sayhello2]}" onto public java.lang.String com.example.api.RestTemplateApi.sayHello2()
+2020-07-31 10:49:40.678 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/sayhello]}" onto public java.lang.String com.example.api.RestTemplateApi.sayHello()
+2020-07-31 10:49:40.680 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/getUser],methods=[POST]}" onto public java.lang.String com.example.api.RiskValidateApi.getUserStr(com.example.vo.RiskRequestVo,org.springframework.validation.BindingResult)
+2020-07-31 10:49:40.680 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/getUser],methods=[GET]}" onto public java.lang.String com.example.api.RiskValidateApi.getUserStr(java.lang.String,int)
+2020-07-31 10:49:40.680 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/getUserTest],methods=[GET]}" onto public java.lang.String com.example.api.RiskValidateApi.getUserTest(java.lang.String,int)
+2020-07-31 10:49:40.680 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/setUser],methods=[POST]}" onto public java.lang.String com.example.api.RiskValidateApi.setUser(com.example.vo.RiskRequestVo,org.springframework.validation.BindingResult)
+2020-07-31 10:49:40.681 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/setUserTest],methods=[POST]}" onto public java.lang.String com.example.api.RiskValidateApi.setUserTest(com.example.vo.RiskRequestVo)
+2020-07-31 10:49:40.682 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/test/update],methods=[GET]}" onto public java.lang.String com.example.api.TestAPi.update()
+2020-07-31 10:49:40.682 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/test/delete/{id}],methods=[GET]}" onto public java.lang.String com.example.api.TestAPi.delete(java.lang.String)
+2020-07-31 10:49:40.683 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/test/insert],methods=[GET]}" onto public java.lang.String com.example.api.TestAPi.insert()
+2020-07-31 10:49:40.683 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/test/test],methods=[POST]}" onto public com.example.vo.AjaxResult com.example.api.TestAPi.test(com.example.vo.RiskRequestVo,javax.servlet.http.HttpServletRequest)
+2020-07-31 10:49:40.683 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/test/insertTwoDiff],methods=[GET]}" onto public java.lang.String com.example.api.TestAPi.insertTwoDiff()
+2020-07-31 10:49:40.683 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/test/helloTwo],methods=[GET]}" onto public java.lang.String com.example.api.TestAPi.sayTwo()
+2020-07-31 10:49:40.683 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/test/queryUser],methods=[GET]}" onto public com.example.pojo.Users com.example.api.TestAPi.queryUser()
+2020-07-31 10:49:40.683 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/test/hello],methods=[GET || POST]}" onto public com.example.pojo.Test com.example.api.TestAPi.say()
+2020-07-31 10:49:40.684 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2020-07-31 10:49:40.685 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2020-07-31 10:49:40.709 [main] INFO  o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2020-07-31 10:49:40.709 [main] INFO  o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2020-07-31 10:49:40.724 [main] INFO  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Detected @ExceptionHandler methods in globalExceptionHandler
+2020-07-31 10:49:40.743 [main] INFO  o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2020-07-31 10:49:40.792 [main] WARN  o.s.b.a.t.AbstractTemplateResolverConfiguration - Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2020-07-31 10:49:41.113 [main] INFO  o.s.ui.freemarker.SpringTemplateLoader - SpringTemplateLoader for FreeMarker: using resource loader [org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@62ef27a8: startup date [Fri Jul 31 10:49:33 GMT+08:00 2020]; root of context hierarchy] and template loader path [classpath:/templates/]
+2020-07-31 10:49:41.114 [main] INFO  o.s.w.servlet.view.freemarker.FreeMarkerConfigurer - ClassTemplateLoader for Spring macros added to FreeMarker configuration
+2020-07-31 10:49:41.134 [main] WARN  o.s.b.a.freemarker.FreeMarkerAutoConfiguration - Cannot find template location(s): [classpath:/templates/] (please add some templates, check your FreeMarker configuration, or set spring.freemarker.checkTemplateLocation=false)
+2020-07-31 10:49:41.352 [main] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter - Registering beans for JMX exposure on startup
+2020-07-31 10:49:41.364 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-15021"]
+2020-07-31 10:49:41.370 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-15021"]
+2020-07-31 10:49:41.379 [main] INFO  org.apache.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+2020-07-31 10:49:41.393 [main] INFO  o.s.b.c.e.tomcat.TomcatEmbeddedServletContainer - Tomcat started on port(s): 15021 (http)
+2020-07-31 10:49:41.397 [main] INFO  com.example.JpaApplication - Started JpaApplication in 8.007 seconds (JVM running for 10.026)
+2020-07-31 10:49:57.020 [http-nio-15021-exec-2] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring FrameworkServlet 'dispatcherServlet'
+2020-07-31 10:49:57.020 [http-nio-15021-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization started
+2020-07-31 10:49:57.044 [http-nio-15021-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization completed in 23 ms
+2020-07-31 18:16:38.355 [main] INFO  com.example.JpaApplication - Starting JpaApplication on MSI with PID 12688 (D:\FileWorkspace\eclipse_workspace\SpringBootBTest\SpringBootJPA\target\classes started by lqk in D:\FileWorkspace\eclipse_workspace\SpringBootBTest\SpringBootJPA)
+2020-07-31 18:16:38.370 [main] INFO  com.example.JpaApplication - No active profile set, falling back to default profiles: default
+2020-07-31 18:16:38.470 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 5.3.6.Final
+2020-07-31 18:16:38.524 [main] INFO  o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@62ef27a8: startup date [Fri Jul 31 18:16:38 GMT+08:00 2020]; root of context hierarchy
+2020-07-31 18:16:39.539 [main] INFO  o.s.b.c.e.tomcat.TomcatEmbeddedServletContainer - Tomcat initialized with port(s): 15021 (http)
+2020-07-31 18:16:39.545 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-07-31 18:16:39.545 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.23
+2020-07-31 18:16:39.699 [localhost-startStop-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-07-31 18:16:39.700 [localhost-startStop-1] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1176 ms
+2020-07-31 18:16:39.848 [localhost-startStop-1] INFO  o.s.boot.web.servlet.ServletRegistrationBean - Mapping servlet: 'dispatcherServlet' to [/]
+2020-07-31 18:16:39.851 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'characterEncodingFilter' to: [/*]
+2020-07-31 18:16:39.851 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2020-07-31 18:16:39.851 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2020-07-31 18:16:39.852 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*]
+2020-07-31 18:16:49.038 [main] INFO  o.s.orm.jpa.LocalContainerEntityManagerFactoryBean - Building JPA container EntityManagerFactory for persistence unit 'default'
+2020-07-31 18:16:49.056 [main] INFO  org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2020-07-31 18:16:49.130 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {5.0.12.Final}
+2020-07-31 18:16:49.131 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+2020-07-31 18:16:49.132 [main] INFO  org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+2020-07-31 18:16:49.171 [main] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2020-07-31 18:16:49.283 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2020-07-31 18:16:49.298 [main] INFO  o.h.engine.jdbc.env.internal.LobCreatorBuilderImpl - HHH000422: Disabling contextual LOB creation as connection was null
+2020-07-31 18:16:49.300 [main] INFO  org.hibernate.type.BasicTypeRegistry - HHH000270: Type registration [java.util.UUID] overrides previous : org.hibernate.type.UUIDBinaryType@6b9c42bd
+2020-07-31 18:16:49.482 [main] WARN  org.hibernate.orm.deprecation - HHH90000014: Found use of deprecated [org.hibernate.id.SequenceHiLoGenerator] sequence-based id generator; use org.hibernate.id.enhanced.SequenceStyleGenerator instead.  See Hibernate Domain Model Mapping Guide for details.
+2020-07-31 18:16:49.484 [main] WARN  org.hibernate.orm.deprecation - HHH90000014: Found use of deprecated [org.hibernate.id.SequenceHiLoGenerator] sequence-based id generator; use org.hibernate.id.enhanced.SequenceStyleGenerator instead.  See Hibernate Domain Model Mapping Guide for details.
+2020-07-31 18:16:49.484 [main] WARN  org.hibernate.orm.deprecation - HHH90000014: Found use of deprecated [org.hibernate.id.SequenceHiLoGenerator] sequence-based id generator; use org.hibernate.id.enhanced.SequenceStyleGenerator instead.  See Hibernate Domain Model Mapping Guide for details.
+2020-07-31 18:16:49.484 [main] WARN  org.hibernate.orm.deprecation - HHH90000014: Found use of deprecated [org.hibernate.id.SequenceHiLoGenerator] sequence-based id generator; use org.hibernate.id.enhanced.SequenceStyleGenerator instead.  See Hibernate Domain Model Mapping Guide for details.
+2020-07-31 18:16:49.762 [main] INFO  o.s.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-07-31 18:16:50.643 [main] INFO  o.h.hql.internal.QueryTranslatorFactoryInitiator - HHH000397: Using ASTQueryTranslatorFactory
+2020-07-31 18:16:50.724 [main] WARN  org.hibernate.hql.internal.ast.HqlSqlWalker - [DEPRECATION] Encountered positional parameter near line 1, column 43 in HQL: [update com.example.pojo.Users set name  = ? where id  = ?].  Positional parameter are considered deprecated; use named parameters or JPA-style positional parameters instead.
+2020-07-31 18:16:50.724 [main] WARN  org.hibernate.hql.internal.ast.HqlSqlWalker - [DEPRECATION] Encountered positional parameter near line 1, column 57 in HQL: [update com.example.pojo.Users set name  = ? where id  = ?].  Positional parameter are considered deprecated; use named parameters or JPA-style positional parameters instead.
+2020-07-31 18:16:50.727 [main] WARN  org.hibernate.hql.internal.ast.HqlSqlWalker - [DEPRECATION] Encountered positional parameter near line 1, column 42 in HQL: [from com.example.pojo.Users where name = ?].  Positional parameter are considered deprecated; use named parameters or JPA-style positional parameters instead.
+2020-07-31 18:16:50.792 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerAdapter - Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@62ef27a8: startup date [Fri Jul 31 18:16:38 GMT+08:00 2020]; root of context hierarchy
+2020-07-31 18:16:50.840 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/export/exportWordFile]}" onto public java.lang.String com.example.api.ExportApi.exportWordFile()
+2020-07-31 18:16:50.841 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/book5]}" onto public java.lang.String com.example.api.RestTemplateApi.book5()
+2020-07-31 18:16:50.841 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/book4]}" onto public com.example.pojo.Test com.example.api.RestTemplateApi.book4()
+2020-07-31 18:16:50.841 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/book3]}" onto public com.example.pojo.Test com.example.api.RestTemplateApi.book3()
+2020-07-31 18:16:50.841 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/book2]}" onto public com.example.pojo.Test com.example.api.RestTemplateApi.book2()
+2020-07-31 18:16:50.842 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/testHttpClient]}" onto public java.lang.Object com.example.api.RestTemplateApi.getUser(java.lang.String) throws java.io.IOException
+2020-07-31 18:16:50.843 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/testRestTemplate]}" onto public java.lang.Object com.example.api.RestTemplateApi.testRestTemplate() throws java.io.IOException
+2020-07-31 18:16:50.843 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/sayhello]}" onto public java.lang.String com.example.api.RestTemplateApi.sayHello()
+2020-07-31 18:16:50.843 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/sayhello2]}" onto public java.lang.String com.example.api.RestTemplateApi.sayHello2()
+2020-07-31 18:16:50.844 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/getUser],methods=[POST]}" onto public java.lang.String com.example.api.RiskValidateApi.getUserStr(com.example.vo.RiskRequestVo,org.springframework.validation.BindingResult)
+2020-07-31 18:16:50.845 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/getUser],methods=[GET]}" onto public java.lang.String com.example.api.RiskValidateApi.getUserStr(java.lang.String,int)
+2020-07-31 18:16:50.845 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/getUserTest],methods=[GET]}" onto public java.lang.String com.example.api.RiskValidateApi.getUserTest(java.lang.String,int)
+2020-07-31 18:16:50.845 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/setUserTest],methods=[POST]}" onto public java.lang.String com.example.api.RiskValidateApi.setUserTest(com.example.vo.RiskRequestVo)
+2020-07-31 18:16:50.845 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/setUser],methods=[POST]}" onto public java.lang.String com.example.api.RiskValidateApi.setUser(com.example.vo.RiskRequestVo,org.springframework.validation.BindingResult)
+2020-07-31 18:16:50.846 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/test/update],methods=[GET]}" onto public java.lang.String com.example.api.TestAPi.update()
+2020-07-31 18:16:50.846 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/test/delete/{id}],methods=[GET]}" onto public java.lang.String com.example.api.TestAPi.delete(java.lang.String)
+2020-07-31 18:16:50.846 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/test/insert],methods=[GET]}" onto public java.lang.String com.example.api.TestAPi.insert()
+2020-07-31 18:16:50.846 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/test/test],methods=[POST]}" onto public com.example.vo.AjaxResult com.example.api.TestAPi.test(com.example.vo.RiskRequestVo,javax.servlet.http.HttpServletRequest)
+2020-07-31 18:16:50.846 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/test/helloTwo],methods=[GET]}" onto public java.lang.String com.example.api.TestAPi.sayTwo()
+2020-07-31 18:16:50.846 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/test/queryUser],methods=[GET]}" onto public com.example.pojo.Users com.example.api.TestAPi.queryUser()
+2020-07-31 18:16:50.846 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/test/hello],methods=[GET || POST]}" onto public com.example.pojo.Test com.example.api.TestAPi.say()
+2020-07-31 18:16:50.846 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/test/insertTwoDiff],methods=[GET]}" onto public java.lang.String com.example.api.TestAPi.insertTwoDiff()
+2020-07-31 18:16:50.847 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2020-07-31 18:16:50.848 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2020-07-31 18:16:50.877 [main] INFO  o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2020-07-31 18:16:50.877 [main] INFO  o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2020-07-31 18:16:50.891 [main] INFO  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Detected @ExceptionHandler methods in globalExceptionHandler
+2020-07-31 18:16:50.912 [main] INFO  o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2020-07-31 18:16:50.961 [main] WARN  o.s.b.a.t.AbstractTemplateResolverConfiguration - Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2020-07-31 18:16:51.257 [main] INFO  o.s.ui.freemarker.SpringTemplateLoader - SpringTemplateLoader for FreeMarker: using resource loader [org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@62ef27a8: startup date [Fri Jul 31 18:16:38 GMT+08:00 2020]; root of context hierarchy] and template loader path [classpath:/templates/]
+2020-07-31 18:16:51.258 [main] INFO  o.s.w.servlet.view.freemarker.FreeMarkerConfigurer - ClassTemplateLoader for Spring macros added to FreeMarker configuration
+2020-07-31 18:16:51.275 [main] WARN  o.s.b.a.freemarker.FreeMarkerAutoConfiguration - Cannot find template location(s): [classpath:/templates/] (please add some templates, check your FreeMarker configuration, or set spring.freemarker.checkTemplateLocation=false)
+2020-07-31 18:16:51.490 [main] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter - Registering beans for JMX exposure on startup
+2020-07-31 18:16:51.504 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-15021"]
+2020-07-31 18:16:51.511 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-15021"]
+2020-07-31 18:16:51.521 [main] INFO  org.apache.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+2020-07-31 18:16:51.535 [main] INFO  o.s.b.c.e.tomcat.TomcatEmbeddedServletContainer - Tomcat started on port(s): 15021 (http)
+2020-07-31 18:16:51.539 [main] INFO  com.example.JpaApplication - Started JpaApplication in 13.397 seconds (JVM running for 15.241)
+2020-07-31 18:16:54.994 [http-nio-15021-exec-2] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring FrameworkServlet 'dispatcherServlet'
+2020-07-31 18:16:54.994 [http-nio-15021-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization started
+2020-07-31 18:16:55.021 [http-nio-15021-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization completed in 27 ms
+2020-07-31 18:25:21.861 [main] INFO  com.example.JpaApplication - Starting JpaApplication on MSI with PID 8692 (D:\FileWorkspace\eclipse_workspace\SpringBootBTest\SpringBootJPA\target\classes started by lqk in D:\FileWorkspace\eclipse_workspace\SpringBootBTest\SpringBootJPA)
+2020-07-31 18:25:21.864 [main] INFO  com.example.JpaApplication - No active profile set, falling back to default profiles: default
+2020-07-31 18:25:21.965 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 5.3.6.Final
+2020-07-31 18:25:21.987 [main] INFO  o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@62ef27a8: startup date [Fri Jul 31 18:25:21 GMT+08:00 2020]; root of context hierarchy
+2020-07-31 18:25:22.949 [main] INFO  o.s.b.c.e.tomcat.TomcatEmbeddedServletContainer - Tomcat initialized with port(s): 15021 (http)
+2020-07-31 18:25:22.955 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-07-31 18:25:22.955 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.23
+2020-07-31 18:25:23.100 [localhost-startStop-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-07-31 18:25:23.100 [localhost-startStop-1] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1113 ms
+2020-07-31 18:25:23.238 [localhost-startStop-1] INFO  o.s.boot.web.servlet.ServletRegistrationBean - Mapping servlet: 'dispatcherServlet' to [/]
+2020-07-31 18:25:23.241 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'characterEncodingFilter' to: [/*]
+2020-07-31 18:25:23.241 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2020-07-31 18:25:23.241 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2020-07-31 18:25:23.241 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*]
+2020-07-31 18:25:27.184 [main] INFO  o.s.orm.jpa.LocalContainerEntityManagerFactoryBean - Building JPA container EntityManagerFactory for persistence unit 'default'
+2020-07-31 18:25:27.192 [main] INFO  org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2020-07-31 18:25:27.239 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {5.0.12.Final}
+2020-07-31 18:25:27.240 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+2020-07-31 18:25:27.241 [main] INFO  org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+2020-07-31 18:25:27.268 [main] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2020-07-31 18:25:27.354 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2020-07-31 18:25:27.366 [main] INFO  o.h.engine.jdbc.env.internal.LobCreatorBuilderImpl - HHH000422: Disabling contextual LOB creation as connection was null
+2020-07-31 18:25:27.367 [main] INFO  org.hibernate.type.BasicTypeRegistry - HHH000270: Type registration [java.util.UUID] overrides previous : org.hibernate.type.UUIDBinaryType@545d2560
+2020-07-31 18:25:27.517 [main] WARN  org.hibernate.orm.deprecation - HHH90000014: Found use of deprecated [org.hibernate.id.SequenceHiLoGenerator] sequence-based id generator; use org.hibernate.id.enhanced.SequenceStyleGenerator instead.  See Hibernate Domain Model Mapping Guide for details.
+2020-07-31 18:25:27.519 [main] WARN  org.hibernate.orm.deprecation - HHH90000014: Found use of deprecated [org.hibernate.id.SequenceHiLoGenerator] sequence-based id generator; use org.hibernate.id.enhanced.SequenceStyleGenerator instead.  See Hibernate Domain Model Mapping Guide for details.
+2020-07-31 18:25:27.519 [main] WARN  org.hibernate.orm.deprecation - HHH90000014: Found use of deprecated [org.hibernate.id.SequenceHiLoGenerator] sequence-based id generator; use org.hibernate.id.enhanced.SequenceStyleGenerator instead.  See Hibernate Domain Model Mapping Guide for details.
+2020-07-31 18:25:27.519 [main] WARN  org.hibernate.orm.deprecation - HHH90000014: Found use of deprecated [org.hibernate.id.SequenceHiLoGenerator] sequence-based id generator; use org.hibernate.id.enhanced.SequenceStyleGenerator instead.  See Hibernate Domain Model Mapping Guide for details.
+2020-07-31 18:25:27.743 [main] INFO  o.s.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-07-31 18:25:28.556 [main] INFO  o.h.hql.internal.QueryTranslatorFactoryInitiator - HHH000397: Using ASTQueryTranslatorFactory
+2020-07-31 18:25:28.665 [main] WARN  org.hibernate.hql.internal.ast.HqlSqlWalker - [DEPRECATION] Encountered positional parameter near line 1, column 43 in HQL: [update com.example.pojo.Users set name  = ? where id  = ?].  Positional parameter are considered deprecated; use named parameters or JPA-style positional parameters instead.
+2020-07-31 18:25:28.665 [main] WARN  org.hibernate.hql.internal.ast.HqlSqlWalker - [DEPRECATION] Encountered positional parameter near line 1, column 57 in HQL: [update com.example.pojo.Users set name  = ? where id  = ?].  Positional parameter are considered deprecated; use named parameters or JPA-style positional parameters instead.
+2020-07-31 18:25:28.668 [main] WARN  org.hibernate.hql.internal.ast.HqlSqlWalker - [DEPRECATION] Encountered positional parameter near line 1, column 42 in HQL: [from com.example.pojo.Users where name = ?].  Positional parameter are considered deprecated; use named parameters or JPA-style positional parameters instead.
+2020-07-31 18:25:28.709 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerAdapter - Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@62ef27a8: startup date [Fri Jul 31 18:25:21 GMT+08:00 2020]; root of context hierarchy
+2020-07-31 18:25:28.759 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/export/exportWordFile]}" onto public java.lang.String com.example.api.ExportApi.exportWordFile()
+2020-07-31 18:25:28.759 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/sayhello]}" onto public java.lang.String com.example.api.RestTemplateApi.sayHello()
+2020-07-31 18:25:28.760 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/book3]}" onto public com.example.pojo.Test com.example.api.RestTemplateApi.book3()
+2020-07-31 18:25:28.760 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/book2]}" onto public com.example.pojo.Test com.example.api.RestTemplateApi.book2()
+2020-07-31 18:25:28.760 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/sayhello2]}" onto public java.lang.String com.example.api.RestTemplateApi.sayHello2()
+2020-07-31 18:25:28.760 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/book4]}" onto public com.example.pojo.Test com.example.api.RestTemplateApi.book4()
+2020-07-31 18:25:28.760 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/testRestTemplate]}" onto public java.lang.Object com.example.api.RestTemplateApi.testRestTemplate() throws java.io.IOException
+2020-07-31 18:25:28.761 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/testHttpClient]}" onto public java.lang.Object com.example.api.RestTemplateApi.getUser(java.lang.String) throws java.io.IOException
+2020-07-31 18:25:28.761 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/book5]}" onto public java.lang.String com.example.api.RestTemplateApi.book5()
+2020-07-31 18:25:28.763 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/getUserTest],methods=[GET]}" onto public java.lang.String com.example.api.RiskValidateApi.getUserTest(java.lang.String,int)
+2020-07-31 18:25:28.763 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/setUserTest],methods=[POST]}" onto public java.lang.String com.example.api.RiskValidateApi.setUserTest(com.example.vo.RiskRequestVo)
+2020-07-31 18:25:28.763 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/getUser],methods=[POST]}" onto public java.lang.String com.example.api.RiskValidateApi.getUserStr(com.example.vo.RiskRequestVo,org.springframework.validation.BindingResult)
+2020-07-31 18:25:28.764 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/getUser],methods=[GET]}" onto public java.lang.String com.example.api.RiskValidateApi.getUserStr(java.lang.String,int)
+2020-07-31 18:25:28.764 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/setUser],methods=[POST]}" onto public java.lang.String com.example.api.RiskValidateApi.setUser(com.example.vo.RiskRequestVo,org.springframework.validation.BindingResult)
+2020-07-31 18:25:28.765 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/test/update],methods=[GET]}" onto public java.lang.String com.example.api.TestAPi.update()
+2020-07-31 18:25:28.765 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/test/delete/{id}],methods=[GET]}" onto public java.lang.String com.example.api.TestAPi.delete(java.lang.String)
+2020-07-31 18:25:28.765 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/test/insert],methods=[GET]}" onto public java.lang.String com.example.api.TestAPi.insert()
+2020-07-31 18:25:28.765 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/test/test],methods=[POST]}" onto public com.example.vo.AjaxResult com.example.api.TestAPi.test(com.example.vo.RiskRequestVo,javax.servlet.http.HttpServletRequest)
+2020-07-31 18:25:28.766 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/test/hello],methods=[GET || POST]}" onto public com.example.pojo.Test com.example.api.TestAPi.say()
+2020-07-31 18:25:28.766 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/test/queryUser],methods=[GET]}" onto public com.example.pojo.Users com.example.api.TestAPi.queryUser()
+2020-07-31 18:25:28.766 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/test/insertTwoDiff],methods=[GET]}" onto public java.lang.String com.example.api.TestAPi.insertTwoDiff()
+2020-07-31 18:25:28.766 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/test/helloTwo],methods=[GET]}" onto public java.lang.String com.example.api.TestAPi.sayTwo()
+2020-07-31 18:25:28.767 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2020-07-31 18:25:28.767 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2020-07-31 18:25:28.792 [main] INFO  o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2020-07-31 18:25:28.792 [main] INFO  o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2020-07-31 18:25:28.807 [main] INFO  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Detected @ExceptionHandler methods in globalExceptionHandler
+2020-07-31 18:25:28.827 [main] INFO  o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2020-07-31 18:25:28.880 [main] WARN  o.s.b.a.t.AbstractTemplateResolverConfiguration - Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2020-07-31 18:25:29.159 [main] INFO  o.s.ui.freemarker.SpringTemplateLoader - SpringTemplateLoader for FreeMarker: using resource loader [org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@62ef27a8: startup date [Fri Jul 31 18:25:21 GMT+08:00 2020]; root of context hierarchy] and template loader path [classpath:/templates/]
+2020-07-31 18:25:29.160 [main] INFO  o.s.w.servlet.view.freemarker.FreeMarkerConfigurer - ClassTemplateLoader for Spring macros added to FreeMarker configuration
+2020-07-31 18:25:29.181 [main] WARN  o.s.b.a.freemarker.FreeMarkerAutoConfiguration - Cannot find template location(s): [classpath:/templates/] (please add some templates, check your FreeMarker configuration, or set spring.freemarker.checkTemplateLocation=false)
+2020-07-31 18:25:29.392 [main] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter - Registering beans for JMX exposure on startup
+2020-07-31 18:25:29.403 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-15021"]
+2020-07-31 18:25:29.409 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-15021"]
+2020-07-31 18:25:29.417 [main] INFO  org.apache.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+2020-07-31 18:25:29.431 [main] INFO  o.s.b.c.e.tomcat.TomcatEmbeddedServletContainer - Tomcat started on port(s): 15021 (http)
+2020-07-31 18:25:29.434 [main] INFO  com.example.JpaApplication - Started JpaApplication in 7.763 seconds (JVM running for 8.493)
+2020-07-31 18:25:45.988 [http-nio-15021-exec-2] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring FrameworkServlet 'dispatcherServlet'
+2020-07-31 18:25:45.988 [http-nio-15021-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization started
+2020-07-31 18:25:46.013 [http-nio-15021-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization completed in 25 ms
+2020-07-31 18:27:12.997 [main] INFO  com.example.JpaApplication - Starting JpaApplication on MSI with PID 17684 (D:\FileWorkspace\eclipse_workspace\SpringBootBTest\SpringBootJPA\target\classes started by lqk in D:\FileWorkspace\eclipse_workspace\SpringBootBTest\SpringBootJPA)
+2020-07-31 18:27:13.001 [main] INFO  com.example.JpaApplication - No active profile set, falling back to default profiles: default
+2020-07-31 18:27:13.108 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 5.3.6.Final
+2020-07-31 18:27:13.140 [main] INFO  o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@62ef27a8: startup date [Fri Jul 31 18:27:13 GMT+08:00 2020]; root of context hierarchy
+2020-07-31 18:27:14.123 [main] INFO  o.s.b.c.e.tomcat.TomcatEmbeddedServletContainer - Tomcat initialized with port(s): 15021 (http)
+2020-07-31 18:27:14.128 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-07-31 18:27:14.129 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.23
+2020-07-31 18:27:14.272 [localhost-startStop-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-07-31 18:27:14.273 [localhost-startStop-1] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1133 ms
+2020-07-31 18:27:14.411 [localhost-startStop-1] INFO  o.s.boot.web.servlet.ServletRegistrationBean - Mapping servlet: 'dispatcherServlet' to [/]
+2020-07-31 18:27:14.415 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'characterEncodingFilter' to: [/*]
+2020-07-31 18:27:14.415 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2020-07-31 18:27:14.415 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2020-07-31 18:27:14.415 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*]
+2020-07-31 18:27:18.341 [main] INFO  o.s.orm.jpa.LocalContainerEntityManagerFactoryBean - Building JPA container EntityManagerFactory for persistence unit 'default'
+2020-07-31 18:27:18.349 [main] INFO  org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2020-07-31 18:27:18.395 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {5.0.12.Final}
+2020-07-31 18:27:18.396 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+2020-07-31 18:27:18.397 [main] INFO  org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+2020-07-31 18:27:18.425 [main] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2020-07-31 18:27:18.512 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2020-07-31 18:27:18.524 [main] INFO  o.h.engine.jdbc.env.internal.LobCreatorBuilderImpl - HHH000422: Disabling contextual LOB creation as connection was null
+2020-07-31 18:27:18.525 [main] INFO  org.hibernate.type.BasicTypeRegistry - HHH000270: Type registration [java.util.UUID] overrides previous : org.hibernate.type.UUIDBinaryType@50e5032c
+2020-07-31 18:27:18.678 [main] WARN  org.hibernate.orm.deprecation - HHH90000014: Found use of deprecated [org.hibernate.id.SequenceHiLoGenerator] sequence-based id generator; use org.hibernate.id.enhanced.SequenceStyleGenerator instead.  See Hibernate Domain Model Mapping Guide for details.
+2020-07-31 18:27:18.680 [main] WARN  org.hibernate.orm.deprecation - HHH90000014: Found use of deprecated [org.hibernate.id.SequenceHiLoGenerator] sequence-based id generator; use org.hibernate.id.enhanced.SequenceStyleGenerator instead.  See Hibernate Domain Model Mapping Guide for details.
+2020-07-31 18:27:18.680 [main] WARN  org.hibernate.orm.deprecation - HHH90000014: Found use of deprecated [org.hibernate.id.SequenceHiLoGenerator] sequence-based id generator; use org.hibernate.id.enhanced.SequenceStyleGenerator instead.  See Hibernate Domain Model Mapping Guide for details.
+2020-07-31 18:27:18.680 [main] WARN  org.hibernate.orm.deprecation - HHH90000014: Found use of deprecated [org.hibernate.id.SequenceHiLoGenerator] sequence-based id generator; use org.hibernate.id.enhanced.SequenceStyleGenerator instead.  See Hibernate Domain Model Mapping Guide for details.
+2020-07-31 18:27:18.906 [main] INFO  o.s.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-07-31 18:27:19.618 [main] INFO  o.h.hql.internal.QueryTranslatorFactoryInitiator - HHH000397: Using ASTQueryTranslatorFactory
+2020-07-31 18:27:19.655 [main] WARN  org.hibernate.hql.internal.ast.HqlSqlWalker - [DEPRECATION] Encountered positional parameter near line 1, column 43 in HQL: [update com.example.pojo.Users set name  = ? where id  = ?].  Positional parameter are considered deprecated; use named parameters or JPA-style positional parameters instead.
+2020-07-31 18:27:19.656 [main] WARN  org.hibernate.hql.internal.ast.HqlSqlWalker - [DEPRECATION] Encountered positional parameter near line 1, column 57 in HQL: [update com.example.pojo.Users set name  = ? where id  = ?].  Positional parameter are considered deprecated; use named parameters or JPA-style positional parameters instead.
+2020-07-31 18:27:19.665 [main] WARN  org.hibernate.hql.internal.ast.HqlSqlWalker - [DEPRECATION] Encountered positional parameter near line 1, column 42 in HQL: [from com.example.pojo.Users where name = ?].  Positional parameter are considered deprecated; use named parameters or JPA-style positional parameters instead.
+2020-07-31 18:27:19.746 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerAdapter - Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@62ef27a8: startup date [Fri Jul 31 18:27:13 GMT+08:00 2020]; root of context hierarchy
+2020-07-31 18:27:19.793 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/export/exportWordFile]}" onto public java.lang.String com.example.api.ExportApi.exportWordFile()
+2020-07-31 18:27:19.794 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/book5]}" onto public java.lang.String com.example.api.RestTemplateApi.book5()
+2020-07-31 18:27:19.795 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/testHttpClient]}" onto public java.lang.Object com.example.api.RestTemplateApi.getUser(java.lang.String) throws java.io.IOException
+2020-07-31 18:27:19.795 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/testRestTemplate]}" onto public java.lang.Object com.example.api.RestTemplateApi.testRestTemplate() throws java.io.IOException
+2020-07-31 18:27:19.795 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/sayhello2]}" onto public java.lang.String com.example.api.RestTemplateApi.sayHello2()
+2020-07-31 18:27:19.795 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/book2]}" onto public com.example.pojo.Test com.example.api.RestTemplateApi.book2()
+2020-07-31 18:27:19.795 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/book3]}" onto public com.example.pojo.Test com.example.api.RestTemplateApi.book3()
+2020-07-31 18:27:19.795 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/sayhello]}" onto public java.lang.String com.example.api.RestTemplateApi.sayHello()
+2020-07-31 18:27:19.796 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/book4]}" onto public com.example.pojo.Test com.example.api.RestTemplateApi.book4()
+2020-07-31 18:27:19.797 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/getUserTest],methods=[GET]}" onto public java.lang.String com.example.api.RiskValidateApi.getUserTest(java.lang.String,int)
+2020-07-31 18:27:19.797 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/setUser],methods=[POST]}" onto public java.lang.String com.example.api.RiskValidateApi.setUser(com.example.vo.RiskRequestVo,org.springframework.validation.BindingResult)
+2020-07-31 18:27:19.797 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/getUser],methods=[POST]}" onto public java.lang.String com.example.api.RiskValidateApi.getUserStr(com.example.vo.RiskRequestVo,org.springframework.validation.BindingResult)
+2020-07-31 18:27:19.798 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/getUser],methods=[GET]}" onto public java.lang.String com.example.api.RiskValidateApi.getUserStr(java.lang.String,int)
+2020-07-31 18:27:19.798 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/setUserTest],methods=[POST]}" onto public java.lang.String com.example.api.RiskValidateApi.setUserTest(com.example.vo.RiskRequestVo)
+2020-07-31 18:27:19.799 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/test/update],methods=[GET]}" onto public java.lang.String com.example.api.TestAPi.update()
+2020-07-31 18:27:19.799 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/test/delete/{id}],methods=[GET]}" onto public java.lang.String com.example.api.TestAPi.delete(java.lang.String)
+2020-07-31 18:27:19.799 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/test/insert],methods=[GET]}" onto public java.lang.String com.example.api.TestAPi.insert()
+2020-07-31 18:27:19.800 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/test/test],methods=[POST]}" onto public com.example.vo.AjaxResult com.example.api.TestAPi.test(com.example.vo.RiskRequestVo,javax.servlet.http.HttpServletRequest)
+2020-07-31 18:27:19.800 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/test/insertTwoDiff],methods=[GET]}" onto public java.lang.String com.example.api.TestAPi.insertTwoDiff()
+2020-07-31 18:27:19.800 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/test/queryUser],methods=[GET]}" onto public com.example.pojo.Users com.example.api.TestAPi.queryUser()
+2020-07-31 18:27:19.800 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/test/hello],methods=[GET || POST]}" onto public com.example.pojo.Test com.example.api.TestAPi.say()
+2020-07-31 18:27:19.800 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/test/helloTwo],methods=[GET]}" onto public java.lang.String com.example.api.TestAPi.sayTwo()
+2020-07-31 18:27:19.801 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2020-07-31 18:27:19.802 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2020-07-31 18:27:19.825 [main] INFO  o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2020-07-31 18:27:19.825 [main] INFO  o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2020-07-31 18:27:19.840 [main] INFO  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Detected @ExceptionHandler methods in globalExceptionHandler
+2020-07-31 18:27:19.858 [main] INFO  o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2020-07-31 18:27:19.905 [main] WARN  o.s.b.a.t.AbstractTemplateResolverConfiguration - Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2020-07-31 18:27:20.191 [main] INFO  o.s.ui.freemarker.SpringTemplateLoader - SpringTemplateLoader for FreeMarker: using resource loader [org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@62ef27a8: startup date [Fri Jul 31 18:27:13 GMT+08:00 2020]; root of context hierarchy] and template loader path [classpath:/templates/]
+2020-07-31 18:27:20.192 [main] INFO  o.s.w.servlet.view.freemarker.FreeMarkerConfigurer - ClassTemplateLoader for Spring macros added to FreeMarker configuration
+2020-07-31 18:27:20.210 [main] WARN  o.s.b.a.freemarker.FreeMarkerAutoConfiguration - Cannot find template location(s): [classpath:/templates/] (please add some templates, check your FreeMarker configuration, or set spring.freemarker.checkTemplateLocation=false)
+2020-07-31 18:27:20.424 [main] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter - Registering beans for JMX exposure on startup
+2020-07-31 18:27:20.434 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-15021"]
+2020-07-31 18:27:20.440 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-15021"]
+2020-07-31 18:27:20.449 [main] INFO  org.apache.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+2020-07-31 18:27:20.462 [main] INFO  o.s.b.c.e.tomcat.TomcatEmbeddedServletContainer - Tomcat started on port(s): 15021 (http)
+2020-07-31 18:27:20.465 [main] INFO  com.example.JpaApplication - Started JpaApplication in 7.669 seconds (JVM running for 8.429)
+2020-07-31 18:27:41.093 [http-nio-15021-exec-2] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring FrameworkServlet 'dispatcherServlet'
+2020-07-31 18:27:41.093 [http-nio-15021-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization started
+2020-07-31 18:27:41.118 [http-nio-15021-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization completed in 25 ms

@@ -23,7 +23,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@Data
+//@Data
 @NoArgsConstructor
 @AllArgsConstructor
 //@ToString(exclude={"roles"})
@@ -49,15 +49,16 @@ public class Users implements Serializable{
 	@Column(name="address")
 	private String address;
 	
+	
 	/**插入时间*/
 	@CreatedDate
-	@Column(name = "INSERTTIMEFORHIS",insertable=false,updatable=false)
-//	@Column(name = "INSERTTIMEFORHIS",updatable=false)
+//	@Column(name = "INSERTTIMEFORHIS",insertable=false,updatable=false)
+	@Column(name = "INSERTTIMEFORHIS",updatable=false)
 	private Date insertTimeForHis;
 	/**更新时间*/
 	@LastModifiedDate
-	@Column(name = "OPERATETIMEFORHIS",insertable=false)
-//	@Column(name = "OPERATETIMEFORHIS")
+//	@Column(name = "OPERATETIMEFORHIS",insertable=false)
+	@Column(name = "OPERATETIMEFORHIS")
 	private Date operateTimeForHis;
 	
 //	@JsonIgnore   //  设置@JsonIgnore,这个注解的意思是表示在序列化的时候，忽略这个属性

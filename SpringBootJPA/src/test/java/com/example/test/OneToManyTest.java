@@ -3,7 +3,6 @@ package com.example.test;
 import java.math.BigDecimal;
 import java.util.UUID;
 
-import org.codehaus.groovy.runtime.StringGroovyMethods;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.BeanUtils;
@@ -11,7 +10,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import com.alibaba.fastjson.JSON;
 import com.example.JpaApplication;
 import com.example.dao.RiskInfoDiscussRepository;
 import com.example.dao.UsersRepository;
@@ -36,10 +34,9 @@ public class OneToManyTest {
 	/**
 	 * 一对多关联关系的添加,使用@Data不能成功，自己添加get、set方法就可以成功
 	 */
+	
 	@Test
 	public void testSave(){
-		BigDecimal aa = new BigDecimal(2).setScale(1, BigDecimal.ROUND_HALF_UP);
-		System.out.println(aa);
 		//创建一个用户
 		Users users = new Users();
 		users.setAddress("天津");
@@ -49,9 +46,8 @@ public class OneToManyTest {
 		//创建一个角色
 		Roles roles = new Roles();
 		roles.setRolename("管理员");
-//		
 //		//关联
-		roles.getUsers().add(users);
+//		roles.getUsers().add(users);
 		users.setRoles(roles);
 		
 		//保存

@@ -10,6 +10,12 @@ spring:
             implicit-strategy: org.hibernate.boot.model.naming.ImplicitNamingStrategyLegacyJpaImpl
             physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl 
       show-sql: true  
+      properties: 
+        hibernate: 
+          format_sql: true
+          dialect: org.hibernate.dialect.PostgreSQLDialect
+          temp: 
+            use_jdbc_metadata_defaults: false
    type: com.alibaba.druid.pool.DruidDataSource
    datasource: #\u6570\u636E\u6E90\u914D\u7F6E
 #      url: jdbc:postgresql://localhost:5432/platform_devdb
