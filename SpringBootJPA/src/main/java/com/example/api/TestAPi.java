@@ -6,6 +6,7 @@ import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -17,6 +18,8 @@ import com.example.dao.UsersRepository;
 import com.example.pojo.Test;
 import com.example.pojo.Users;
 import com.example.service.TestService;
+import com.example.service.TransactionServiceOne;
+import com.example.service.TransactionServiceTwo;
 import com.example.vo.AjaxResult;
 import com.example.vo.RiskRequestVo;
 
@@ -102,5 +105,18 @@ public class TestAPi {
 		 }
          return users;
      }
+	 
+	 @Autowired 
+	 TransactionServiceOne transactionServiceOne;
+	 @Autowired 
+	 TransactionServiceTwo transactionServiceTwo;
+	 
+	 @GetMapping(value = "/testTransaction")
+	 public String testTransaction() {
+		 
+		String result =  transactionServiceOne.saveTest();
+		
+		return result;
+	 }
 	 
 }

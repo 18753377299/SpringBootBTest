@@ -13,6 +13,9 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.domain.Sort.Direction;
 import org.springframework.data.domain.Sort.Order;
@@ -85,21 +88,21 @@ public class RiskTest {
 //       criteria.add(Restrictions.and(Restrictions.eq("name", "w")));
 //       进行字段截取查询
        criteria.add(Restrictions.intercept("name", "w", 1, 1));
-       Sort sort = null;
+//       Sort sort = null;
 //       Sort sort = new Sort(new Order(Direction.DESC,"id"));
 //       criteria.add(Restrictions.eq("id",1)).add(Restrictions.like("name","wan"));
        // 多条件进行排序
        List< Order> orders=new ArrayList< Order>();
        orders.add( new Order(Direction. DESC, "id"));
        orders.add( new Order(Direction.ASC, "password"));
-       sort = new Sort(orders);
-       List<TestTwo> users = riskTestRepository.findAll(criteria,sort);
+//       sort = new Sort(orders);
+//       List<TestTwo> users = riskTestRepository.findAll(criteria,sort);
        /*springboot1.0用法*/
-//       Pageable pageable = null;
-//       Sort sort = new Sort(Sort.Direction.ASC, "id");
-//       pageable = new PageRequest(0, 2, sort);
-//       Page<TestTwo> pageTestTwo =  riskTestRepository.findAll(criteria, pageable);
-//       List<TestTwo> users = pageTestTwo.getContent();
+       Pageable pageable = null;
+       Sort sort = new Sort(Sort.Direction.ASC, "id");
+       pageable = new PageRequest(0, 2, sort);
+       Page<TestTwo> pageTestTwo =  riskTestRepository.findAll(criteria, pageable);
+       List<TestTwo> users = pageTestTwo.getContent();
        /*springboot2.0用法*/
 //       Page<TestTwo> users =  riskTestRepository.findAll(criteria, 
 //    		   PageRequest.of(0, 1,Sort.by(Sort.Direction.DESC, "age")));

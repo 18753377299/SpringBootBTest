@@ -44,7 +44,7 @@ public class OneToManyFk {
 			testTwoKey.setId(id);
 			
 			testTwoKeyList.add(testTwoKey);
-			testTwo.setTestTwoKeyList(testTwoKeyList);
+//			testTwo.setTestTwoKeyList(testTwoKeyList);
 			//保存
 			this.testTwoRepository.save(testTwo);
 			System.out.println(testTwo);

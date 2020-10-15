@@ -1,9 +1,8 @@
 package com.example.dao;
 
-import org.springframework.data.jpa.repository.JpaRepository;
-
+import com.example.common.jpa.base.JpaBaseRepository;
 import com.example.pojo.Test;
 
-public interface TestRepository extends JpaRepository<Test,String>{
+public interface TestRepository extends JpaBaseRepository<Test,String>{
 	
 }
