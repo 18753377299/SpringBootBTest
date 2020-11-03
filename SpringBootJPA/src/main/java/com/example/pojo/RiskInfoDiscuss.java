@@ -19,7 +19,7 @@ import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 //@Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
 @Entity
 @IdClass(RiskInfoDiscussId.class)
-@Table(name = "RISKINFO_DISCUSS")
+@Table(name = "RISKINFO_DISCUSS_2")
 @EntityListeners(AuditingEntityListener.class)
 public class RiskInfoDiscuss  implements java.io.Serializable {
 	private static final long serialVersionUID = 1L;

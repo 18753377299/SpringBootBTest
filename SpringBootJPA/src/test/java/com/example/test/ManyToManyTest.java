@@ -43,10 +43,10 @@ public class ManyToManyTest {
 		menus2.setFatherid(1);
 		menus2.setMenusname("项目管理");
 		//关联
-//		r.getMenus().add(menus);
-//		r.getMenus().add(menus2);
-//		menus.getRoles().add(r);
-//		menus2.getRoles().add(r);
+		r.getMenus().add(menus);
+		r.getMenus().add(menus2);
+		menus.getRoles().add(r);
+		menus2.getRoles().add(r);
 		//保存
 		this.rolesRepository.save(r);
 		
@@ -60,10 +60,10 @@ public class ManyToManyTest {
 	public void testFind(){
 		Roles roles = this.rolesRepository.findOne(2);
 		System.out.println(roles.getRolename());
-//		Set<Menus> menus = roles.getMenus();
-//		for (Menus menus2 : menus) {
-//			System.out.println(menus2);
-//		}
+		Set<Menus> menus = roles.getMenus();
+		for (Menus menus2 : menus) {
+			System.out.println(menus2);
+		}
 	}
 	
 	

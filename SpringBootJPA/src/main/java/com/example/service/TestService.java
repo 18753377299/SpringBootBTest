@@ -32,6 +32,7 @@ import com.example.pojo.Users;
 @Transactional
 public class TestService {
 	
+	
 	@Autowired
 	TestRepository testRepository;
 	@Autowired
@@ -40,17 +41,20 @@ public class TestService {
 	private UsersRepository usersRepository;
 	
 	
+	/*当程序中遇到异常时，不进行try{}catch()抛出，直接使用全局异常方法也能进行处理*/
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
 	public List<Test> findAll() {
 		List<Test> testList = null;
-		try {
+//		try {
 			testList =  testRepository.findAll();
+//			System.out.println(1/0);
 			for (Test test: testList) {
 				System.out.println("id:"+test.getId()+",name:"+test.getName());
 			}
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
+//		} catch (Exception e) {
+////			e.printStackTrace();
+//			throw new RuntimeException(e.getMessage());
+//		}
 		return testList;
 	}
 	

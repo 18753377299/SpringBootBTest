@@ -1,4 +1,4 @@
-package com.example.service;
+package com.example.func.riskmap.service.facade;
 
 import java.util.Date;
 import java.util.List;

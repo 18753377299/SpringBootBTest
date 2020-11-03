@@ -12,6 +12,9 @@ import org.apache.http.impl.client.HttpClients;
 import org.apache.http.util.EntityUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
@@ -71,13 +74,25 @@ public class RestTemplateApi {
 	}
 	
 //	postForObject
-	@RequestMapping("/book4")
+	@GetMapping("/book4")
 	public Test book4() {
 		Test book = new Test();
 	    book.setName("红楼梦");
-	    Test test  = restTemplate.postForObject("http://localhost:15021/test/hello", book, Test.class);
+	    Test test  = null;
+//	    test  = restTemplate.postForObject("http://localhost:15021/test/hello", book, Test.class);
+	    test  = restTemplate.postForObject("http://localhost:15021/book4receive", book, Test.class);
 	    return test;
 	}
+	/**进行restTemplate接收参数测试*/
+	@PostMapping("/book4receive")
+	public Test book4receive(@RequestBody Object object) {
+		Test book = new Test();
+	    book.setName("红楼梦receive");
+	    System.out.println(object);
+	    Test test  = restTemplate.postForObject("http://localhost:15021/test/hello", book, Test.class);
+	    return book;
+	}
+	
 //	postForLocation
 	@RequestMapping("/book5")
 	public String book5() {

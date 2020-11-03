@@ -37,4 +37,11 @@ public class Test implements Serializable {
 	/** 对应字段：name */
 	@Column(name = "name")
 	private String name;
+	
+	@Override
+	public String toString() {
+		return "Test [id=" + id + ", name=" + name + "]";
+	}
+	
+	
 }

@@ -1,5 +1,3 @@
-import static org.mockito.Matchers.doubleThat;
-
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.util.ArrayList;

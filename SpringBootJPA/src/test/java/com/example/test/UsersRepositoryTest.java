@@ -5,6 +5,8 @@ import java.util.List;
 
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
+import javax.persistence.criteria.Join;
+import javax.persistence.criteria.JoinType;
 import javax.persistence.criteria.Predicate;
 import javax.persistence.criteria.Root;
 import javax.transaction.Transactional;
@@ -24,14 +26,18 @@ import org.springframework.test.annotation.Rollback;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import com.example.JpaApplication;
+import com.example.dao.RiskReportSaleMainRepository;
 import com.example.dao.UsersRepository;
 import com.example.dao.UsersRepositoryByName;
 import com.example.dao.UsersRepositoryCrudRepository;
 import com.example.dao.UsersRepositoryPagingAndSorting;
 import com.example.dao.UsersRepositoryQueryAnnotation;
 import com.example.dao.UsersRepositorySpecification;
+import com.example.pojo.RiskReportSaleImaType;
+import com.example.pojo.RiskReportSaleMain;
 import com.example.pojo.Users;
 import com.example.service.TestService;
+
 
 /**
  * 测试类
@@ -134,9 +140,10 @@ public class UsersRepositoryTest {
 
 	/**
 	 * Repository--@Query测试
+	 * //@Transactional与@Test 一起使用时 事务是自动回滚的。 所以数据是不会插入到数据库中，增加@Rollback(false)之后可以成功的更新
 	 */
 	@Test
-	@Transactional //@Transactional与@Test 一起使用时 事务是自动回滚的。
+	@Transactional 
 	@Rollback(false) //取消自动回滚
 	public void testUpdateUsersNameById() {
 		this.usersRepositoryQueryAnnotation.updateUsersNameById("张三三", 1);
@@ -289,6 +296,7 @@ public class UsersRepositoryTest {
 				return pre;
 			}
 		};
+		System.out.println(spec.toString());
 		List<Users> list = this.usersRepositorySpecification.findAll(spec);
 		for (Users users : list) {
 			System.out.println(users);
@@ -371,4 +379,105 @@ public class UsersRepositoryTest {
 			System.out.println(users);
 		}
 	}
+	
+	@Autowired
+	private RiskReportSaleMainRepository riskReportSaleMainRepository;
+	
+	@Test
+	public void getListByPager(){
+		String riskFileNo ="11111";
+		/*,int iDisplayStart,
+        int iDisplayLength,int iSortCol_0,String sSortDir_0*/
+//		    Pageable pagerequest = buildPageRequest(iDisplayStart, iDisplayLength, iSortCol_0, sSortDir_0);
+		Sort sort = new Sort(Sort.Direction.ASC, "archivesNo");
+		Pageable pagerequest = new PageRequest(0, 2, sort);
+		
+	    Page<RiskReportSaleMain> page = null;
+		try {
+			page = riskReportSaleMainRepository.findAll(new Specification<RiskReportSaleMain>(){
+			    @Override
+			    public Predicate toPredicate(Root<RiskReportSaleMain> root,CriteriaQuery<?> query, CriteriaBuilder cb) {
+			    	List<Predicate> predicates = new ArrayList<>();
+			    	predicates.add(cb.greaterThan(root.get("exploreComcode"), "00000000"));
+			    	
+			        //左连接
+			        root.join(root.getModel().getSingularAttribute("riskReportSaleImaType",RiskReportSaleImaType.class),JoinType.LEFT);
+			        Predicate likeP1 = cb.like(root.get("archivesNo").as(String.class),"%"+riskFileNo+"%");
+//		            Predicate likeP2 = cb.like(depJoin.get("businessNumber").as(String.class), "%"+sSearch+"%");
+			        Predicate likeP2 = cb.like(root.get("archivesNo").as(String.class), "%"+riskFileNo+"%");
+			        Predicate orP = cb.or(likeP1,likeP2);
+			        //参考： http://www.iteye.com/problems/92130
+			        return cb.and(cb.conjunction(),orP);
+//			        predicates.add(likeP1);
+//			        predicates.add(likeP2);
+//			        predicates.add(orP);
+//			        return cb.and(predicates.toArray(new Predicate[predicates.size()]));
+			    }
+			},pagerequest);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+	    //pagerequest = page.nextPageable();
+	    System.out.println(page);
+//	    return page;
+//	    return null;
+	}
+	/**
+	 * jpa进行联表查询，在join联表查询之前的条件是主表的条件，join之后的条件属于子表的条件，也可以进行多个表的连接查询。
+	 * riskReportSaleImaType:是主表中对应的联结表的名称。
+	 *   试验成功！ add by liqiankun 20201020 begin 
+	 *   详情见：https://blog.csdn.net/cn_hhaip/article/details/89527666
+	 * */
+	@Test
+	public void unionFormQueryTest() {
+		
+		List<RiskReportSaleMain> list;
+		try {
+			Specification<RiskReportSaleMain> cation = (root, criteriaQuery, builder) -> {
+			    List<Predicate> predicates = new ArrayList<>();
+              //在关联查出努努
+	        predicates.add(builder.greaterThan(root.get("exploreComcode"), "00000000"));
+//	        predicates.add(builder.equal(root.get("status"), 0).not());
+				
+				/**ErrorRender故障表和Vm表进行连接查询，在ErrorRender必须有一个private Vm vm属性*/
+				//相当于 select * from error_render e left join vm v on e.vm=v.vm
+			    Join<RiskReportSaleMain, RiskReportSaleImaType> vmJoin = root.join("riskReportSaleImaType", JoinType.LEFT);
+
+			    //机型条件 相当于 v.vmTypeId >= 0
+//	        if (vmTypeId >= 0) {
+//			        predicates.add(builder.equal(vmJoin.get("archivesno"), "11111"));
+//	        }
+				
+				// 相当于(left on node n on v.node_id=n.node_id) as tmp left join org o on o.org_id= tmp.org_id
+//	        Join<Vms, Orgas> orgJoin = vmJoin.join("node", JoinType.LEFT).join("org", JoinType.LEFT);
+
+			    //带有orgId查询
+//	        Orgas org = orgasRepository.findOne(orgId);
+				//相当于 o.hierarchy like org.getHierarchy() + "%"
+//	        predicates.add(builder.like(orgJoin.get("hierarchy"), org.getHierarchy() + "%"));
+
+//	        if (error != null && error != 0) {
+//	            predicates.add(root.get("error").in(allErrorList));
+//	        } 
+
+			    if (predicates.size() > 1) {
+			        return builder.and(predicates.toArray(new Predicate[predicates.size()]));
+			    } else if (predicates.size() == 1) {
+			        return predicates.get(0);
+			    } else {
+			        return null;
+			    }
+			};
+			Sort sort = new Sort(new Order(Direction.DESC,"archivesNo"));
+			list = this.riskReportSaleMainRepository.findAll(cation,sort);
+			System.out.println(list.toString());
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+
+	}
+	
+	
 }

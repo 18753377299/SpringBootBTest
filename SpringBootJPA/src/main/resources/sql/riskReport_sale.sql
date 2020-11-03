@@ -1,3 +1,4 @@
+drop table if  exists riskreport_salemain;
 CREATE TABLE
     riskreport_salemain
     (
@@ -15,7 +16,7 @@ CREATE TABLE
         operatetimeforhis TIMESTAMP(6),
         PRIMARY KEY (archivesno)
     );
-    
+    drop table if  exists riskreport_saleimatype;
     CREATE TABLE riskreport_saleimatype
     (
         archivesno CHAR(22) NOT NULL,

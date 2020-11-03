@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.alibaba.fastjson.JSON;
@@ -33,16 +34,17 @@ public class TestAPi {
 	TestService testService;
 	@Autowired
 	UsersRepository usersRepository;
+	
 	// 查询
 	 @RequestMapping(value = "/hello",method = {RequestMethod.GET,RequestMethod.POST})
-     public Test say(){
+     public AjaxResult<Test> say(){
 		 Test  test = null;
 		 System.out.println("hello everyBody");
 		 List<Test> testList= testService.findAll();
 		 if(null!=testList&&testList.size()>0) {
 			 test =  testList.get(0);
 		 }
-         return test;
+         return AjaxResult.ok(test);
      }
 	// 查询
 	 @RequestMapping(value = "/helloTwo",method = RequestMethod.GET)
@@ -117,6 +119,13 @@ public class TestAPi {
 		String result =  transactionServiceOne.saveTest();
 		
 		return result;
+	 }
+	 
+	 @RequestMapping(value = "/queryOutlineByRiskFileNo", method = RequestMethod.POST)
+	 @ResponseBody
+	 public String queryByRiskFileNo(String riskControlRequest) {
+		 System.out.println(riskControlRequest);
+		 return  null;
 	 }
 	 
 }

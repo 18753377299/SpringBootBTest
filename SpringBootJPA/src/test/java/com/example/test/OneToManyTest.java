@@ -33,6 +33,7 @@ public class OneToManyTest {
 	
 	/**
 	 * 一对多关联关系的添加,使用@Data不能成功，自己添加get、set方法就可以成功
+	 * 以前会失败，是因为创建表的时候外键关系创建错误。
 	 */
 	
 	@Test

@@ -7,6 +7,11 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.criteria.CriteriaBuilder;
+import javax.persistence.criteria.CriteriaQuery;
+import javax.persistence.criteria.JoinType;
+import javax.persistence.criteria.Predicate;
+import javax.persistence.criteria.Root;
 import javax.sql.DataSource;
 
 import org.junit.Test;
@@ -19,14 +24,19 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.domain.Sort.Direction;
 import org.springframework.data.domain.Sort.Order;
+import org.springframework.data.jpa.domain.Specification;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.example.JpaApplication;
 import com.example.common.jpa.condition.Restrictions;
 import com.example.common.jpa.vo.Criteria;
+import com.example.dao.RiskReportSaleMainRepository;
 import com.example.dao.RiskTestRepository;
 import com.example.dao.TestTwoKeyRepository;
+import com.example.pojo.RiskReportSaleImaType;
+import com.example.pojo.RiskReportSaleMain;
 import com.example.pojo.TestTwo;
 import com.example.pojo.TestTwoKey;
 
@@ -37,8 +47,12 @@ import io.swagger.annotations.ApiOperation;
 public class RiskTest {
 	@Autowired 
     private RiskTestRepository riskTestRepository;
+	
 	@Autowired 
     private TestTwoKeyRepository testTwoKeyRepository;
+	
+	@Autowired
+	private RiskReportSaleMainRepository riskReportSaleMainRepository;
 	
 	@Autowired
 	private JdbcTemplate jdbcTemplate;
@@ -153,4 +167,6 @@ public class RiskTest {
         }
         
     }
+   
+    
 }

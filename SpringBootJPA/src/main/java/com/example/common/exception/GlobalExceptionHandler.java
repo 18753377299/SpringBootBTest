@@ -55,24 +55,29 @@ public class GlobalExceptionHandler {
 
         if (e instanceof NullPointerException) {
             logger.error("代码00：" + e.getMessage(), e);
-            return ResultEntity.fail("发生空指针异常："+ e.getMessage());
+            return AjaxResult.error("发生空指针异常："+ e.getMessage());
         } else if (e instanceof IllegalArgumentException) {
             logger.error("代码01：" + e.getMessage(), e);
-            return ResultEntity.fail("请求参数类型不匹配："+ e.getMessage());
+            return AjaxResult.error("请求参数类型不匹配："+ e.getMessage());
         } else if (e instanceof SQLException) {
             logger.error("代码02：" + e.getMessage(), e);
-            return ResultEntity.fail("数据库访问异常："+ e.getMessage());
-        }else if (e instanceof ValidationException) {
+            return AjaxResult.error("数据库访问异常："+ e.getMessage());
+        } else if (e instanceof ValidationException) {
             logger.error("代码03：" + e.getMessage(), e);
-            return ResultEntity.fail("方法校验异常："+ e.getMessage());
+            return AjaxResult.error("方法校验异常："+ e.getMessage());
+        } else if (e instanceof ArithmeticException) {
+            logger.error("代码03-1：" + e.getMessage(), e);
+            return AjaxResult.error("算数运算异常："+ e.getMessage());
         } else if (e instanceof RuntimeException) {
             logger.error("代码04：" + e.getMessage(), e);
-            return ResultEntity.fail("运行时异常异常："+ e.getMessage());
+            return AjaxResult.error("运行时异常异常："+ e.getMessage());
         }else {
             logger.error("代码99：" + e.getMessage(), e);
-            return ResultEntity.fail("服务器代码发生异常,请联系管理员:"+ e.getMessage());
+            return AjaxResult.error("服务器代码发生异常,请联系管理员:"+ e.getMessage());
         }
         
+        
     }
+	
 	
 }

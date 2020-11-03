@@ -1,4 +1,4 @@
-package com.example.controller;
+package com.example.func.riskmap.controller;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -11,10 +11,11 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.common.utils.DateUtils;
-import com.example.service.RiskMapService;
+import com.example.func.riskmap.service.facade.RiskMapService;
 
 @RestController
 public class RiskMapApi {
+	
 	@Autowired
 	private RiskMapService riskMapService;
 	

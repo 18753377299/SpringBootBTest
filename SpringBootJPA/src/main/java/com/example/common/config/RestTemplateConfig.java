@@ -12,13 +12,14 @@ import org.apache.http.impl.conn.PoolingHttpClientConnectionManager;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.client.BufferingClientHttpRequestFactory;
 import org.springframework.http.client.ClientHttpRequestFactory;
 import org.springframework.http.client.HttpComponentsClientHttpRequestFactory;
 import org.springframework.web.client.RestTemplate;
 
 import com.example.common.interceptor.RestTemplateInterceptor;
 
-/*初始化连接池:https://www.cnblogs.com/yuexiaoyun/articles/13034028.html*/
+/*初始化连接池:  https://www.cnblogs.com/yuexiaoyun/articles/13034028.html*/
 
 @Configuration
 public class RestTemplateConfig {
@@ -47,18 +48,37 @@ public class RestTemplateConfig {
 
     @Bean
     public RestTemplate restTemplate() {
-    	RestTemplate restTemplate = new RestTemplate(httpRequestFactory());
+//    	RestTemplate restTemplate = new RestTemplate(httpRequestFactory());
+    	RestTemplate restTemplate = new RestTemplate(httpRequestFactoryBuffer());
     	/*添加RestTemplate拦截器*/
     	restTemplate.getInterceptors().add(new RestTemplateInterceptor());
         return restTemplate;
     }
-
+   /**  
+    *  java.io.IOException:stream closed 异常的原因及处理:
+    *  response和request流只能读取一次，只要读取完就结束了,
+    *  那么接下来就是如何解决流只能读取一次的问题，网上好多人解决都是说用包装类可以解决该问题，将该对象缓存下来，就不会有问题。
+    *  使用BufferingClientHttpRequestFactory包装类（设计模式）
+    * */
+    @Bean
+    public BufferingClientHttpRequestFactory httpRequestFactoryBuffer() {
+    	BufferingClientHttpRequestFactory bufferingClientHttpRequestFactory = new BufferingClientHttpRequestFactory(httpRequestFactory());
+    	return bufferingClientHttpRequestFactory;
+    }
+    
     @Bean
     public ClientHttpRequestFactory httpRequestFactory() {
-        return new HttpComponentsClientHttpRequestFactory(httpClient());
+    	HttpComponentsClientHttpRequestFactory httpComponentsClientHttpRequestFactory =  new HttpComponentsClientHttpRequestFactory(httpClient());
+    	
+    	/*也可以在这里设置时间  begin*/
+    	//    	httpComponentsClientHttpRequestFactory.setConnectionRequestTimeout(0);
+    	/*也可以在这里设置时间  end*/
+    	
+    	return httpComponentsClientHttpRequestFactory;
     }
 
-    @Bean
+    @SuppressWarnings("deprecation")
+	@Bean
     public HttpClient httpClient() {
         Registry<ConnectionSocketFactory> registry = RegistryBuilder.<ConnectionSocketFactory>create()
                 .register("http", PlainConnectionSocketFactory.getSocketFactory())
